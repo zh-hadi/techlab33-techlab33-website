@@ -10,7 +10,7 @@
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="{{ asset('assets/frontend/img/favicon.png') }}" rel="icon">
+  <link href="{{ image($settings->website_favicon) }}" rel="icon">
   <link href="{{ asset('assets/frontend/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
   <!-- Fonts -->
@@ -43,6 +43,8 @@
   
 
   <main class="main">
+
+  
 
     @yield('content')
 

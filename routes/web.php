@@ -7,5 +7,8 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-Route::view('admin', 'backend.pages.dashboard');
+
 Route::view('/', 'frontend.pages.home');
+
+
+include('admin.php');
