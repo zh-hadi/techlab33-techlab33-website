@@ -54,6 +54,14 @@
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="https://wa.me/8801234567890?text={{ urlencode('Hello, I want to know more!') }}" target="_blank" class="btn btn-success">
+    Chat on WhatsApp
+</a>
+
+<button onclick="window.open('https://wa.me/8801234567890?text={{ urlencode('Hi! I need support.') }}', '_blank')" class="btn btn-primary">
+    WhatsApp Us
+</button>
+
 
   <!-- Preloader -->
   <div id="preloader"></div>

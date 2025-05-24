@@ -63,6 +63,15 @@
             </div>
         </div>
 
+         {{-- Phone --}}
+        <div class="form-group row">
+            <label for="whatsapp_number" class="col-sm-2 col-form-label">What's UP number</label>
+            <div class="col-sm-10">
+                <input type="text" name="whatsapp_number" class="form-control" id="whatsapp_number" value="{{ old('phone', $setting->whatsapp_number) }}">
+            </div>
+        </div>
+
+
         {{-- Telephone --}}
         <div class="form-group row">
             <label for="telephone" class="col-sm-2 col-form-label">Telephone</label>

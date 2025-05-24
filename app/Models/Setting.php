@@ -17,6 +17,7 @@ class Setting extends Model
         'website_favicon',
         'address',
         'phone',
+        'whatsapp_number',
         'telephone',
         'hotline_number',
         'facebook_link',

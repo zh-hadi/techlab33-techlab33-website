@@ -34,6 +34,7 @@ class SettingController extends Controller
             'website_favicon' => 'nullable|image|mimes:jpg,jpeg,png,svg,gif,webp',
             'address' => 'nullable|string|max:500',
             'phone' => 'nullable|string|max:50',
+            'whatsapp_number' => 'nullable|string|max:50',
             'telephone' => 'nullable|string|max:50',
             'hotline_number' => 'nullable|string|max:50',
             'facebook_link' => 'nullable|url',

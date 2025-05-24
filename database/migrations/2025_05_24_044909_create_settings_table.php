@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('address')->nullable();
             $table->string('phone')->nullable();
             $table->string('telephone')->nullable();
+            $table->string('whatsapp_number')->nullable();
             $table->string('hotline_number')->nullable();
             $table->string('facebook_link')->nullable();
             $table->string('linkedin_link')->nullable();
