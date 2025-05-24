@@ -30,8 +30,8 @@ class SettingController extends Controller
         $attributes = $request->validate([
             'website_name' => 'required|string|max:255',
             'website_email' => 'required|email',
-            'website_logo' => 'nullable|image|mimes:jpg,jpeg,png,svg,gif,webp|max:2048',
-            'website_favicon' => 'nullable|image|mimes:ico,png|max:1024',
+            'website_logo' => 'nullable|image|mimes:jpg,jpeg,png,svg,gif,webp',
+            'website_favicon' => 'nullable|image|mimes:jpg,jpeg,png,svg,gif,webp',
             'address' => 'nullable|string|max:500',
             'phone' => 'nullable|string|max:50',
             'telephone' => 'nullable|string|max:50',
@@ -50,8 +50,10 @@ class SettingController extends Controller
             }
             $logoPath = $this->fileServices->upload('logo/', $request->file('website_logo'));
             $attributes['website_logo'] = $logoPath;
+          
         }
 
+     
         // Handle favicon upload
         if ($request->hasFile('website_favicon')) {
             if ($setting->website_favicon) {
@@ -61,7 +63,7 @@ class SettingController extends Controller
             $attributes['website_favicon'] =  $path;
         }
 
-   
+        // return $attributes;
 
         $setting->update($attributes);
 

@@ -25,10 +25,12 @@
              <img style="height: 80px !important;" src="{{ image($settings->website_logo) }}" alt="">
           </a>
           <div class="footer-contact pt-3">
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
+            
+            <p class="col-lg-5">{{ $settings->address }}</p>
+            {{-- <p>New York, NY 535022</p> --}}
+            <p class="mt-3"><strong>Telephone:</strong> <span>{{ $settings->website_logo }}</span></p>
+            <p class="mt-3"><strong>Phone:</strong> <span>{{ $settings->phone }}</span></p>
+            <p><strong>Email:</strong> <span>{{ $settings->website_email }}</span></p>
           </div>
         </div>
 
@@ -56,10 +58,10 @@
           <h4>Follow Us</h4>
           <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
           <div class="social-links d-flex">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+            <a href="{{ $settings->x_link }}"><i class="bi bi-twitter-x"></i></a>
+            <a href="{{ $settings->facebook_link }}"><i class="bi bi-facebook"></i></a>
+            <a href="{{ $settings->instagram_link }}"><i class="bi bi-instagram"></i></a>
+            <a href="{{ $settings->linkedin_link }}"><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
 
