@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::view('/', 'frontend.pages.home');
+Route::view('contact', 'frontend.pages.contact');
 
 
 include('admin.php');
