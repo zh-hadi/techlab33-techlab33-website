@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'frontend.pages.home')->name('home.page');
 Route::view('contact', 'frontend.pages.contact')->name('contact.page');
+Route::view('about', 'frontend.pages.about')->name('about.page');
 
 
 include('admin.php');
