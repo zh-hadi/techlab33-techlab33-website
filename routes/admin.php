@@ -1,19 +1,29 @@
 <?php
 
 use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\Auth\LoginController;
+use App\Http\Controllers\Admin\Auth\LogoutController;
 use App\Http\Controllers\Admin\BusinessPartnerController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SkillController;
 use App\Http\Controllers\Admin\TestimonialsController;
+use App\Http\Middleware\AuthCheckMiddleware;
 use Illuminate\Support\Facades\Route;
 
 
 Route::view('admin', 'backend.pages.dashboard');
 
 Route::prefix('admin/')->group(function(){
-    Route::resource('settings', SettingController::class)->only(['index', 'update']);
-    Route::resource('aboutpage/abouts', AboutController::class)->only(['index', 'update']);
-    Route::resource('aboutpage/testimonials', TestimonialsController::class)->only(['index', 'store', 'update', 'destroy']);
-    Route::resource('aboutpage/business-partners', BusinessPartnerController::class)->only(['index', 'store', 'update', 'destroy']);
-    Route::resource('aboutpage/skills', SkillController::class)->only(['index', 'store', 'update', 'destroy']);
+
+    Route::resource('login', LoginController::class)->only(['index', 'store']);
+    Route::get('logout', LogoutController::class)->name('logout');
+
+    Route::middleware(AuthCheckMiddleware::class)->group(function(){
+        Route::resource('settings', SettingController::class)->only(['index', 'update']);
+        Route::resource('aboutpage/abouts', AboutController::class)->only(['index', 'update']);
+        Route::resource('aboutpage/testimonials', TestimonialsController::class)->only(['index', 'store', 'update', 'destroy']);
+        Route::resource('aboutpage/business-partners', BusinessPartnerController::class)->only(['index', 'store', 'update', 'destroy']);
+        Route::resource('aboutpage/skills', SkillController::class)->only(['index', 'store', 'update', 'destroy']);
+    });
+
 });

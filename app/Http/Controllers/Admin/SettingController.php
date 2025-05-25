@@ -8,6 +8,7 @@ use App\Services\FileService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Auth;
 
 class SettingController extends Controller
 {
@@ -15,7 +16,7 @@ class SettingController extends Controller
 
     public function index()
     {
-        
+        // dd(Auth::user());
         $setting = Setting::first();
         return view('backend.setting.index', [
             'setting' => $setting
