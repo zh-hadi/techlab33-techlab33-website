@@ -14,7 +14,7 @@
           <li><a href="services.html">Services</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
           <li><a href="team.html">Team</a></li>
-          <li><a href="blog.html">Blog</a></li>
+          <li><a href="{{  route('blogs.page') }}" class="{{  request()->routeIs('blogs.page') ? 'active' : '' }}">Blog</a></li>
           <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="#">Dropdown 1</a></li>

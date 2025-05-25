@@ -25,7 +25,7 @@ class SettingFactory extends Factory
 Alamin Apon Heights
 Dhaka 1207 , Bangladesh ',
             'phone' => '+8801741 584 868',
-            'whatsapp_number' => '+8801741 584 868',
+            'whatsapp_number' => '8801741584868',
             'telephone' => '+8802222 244 024',
             'hotline_number' => $this->faker->tollFreePhoneNumber,
             'facebook_link' => 'https://facebook.com/' . $this->faker->userName,

@@ -116,6 +116,8 @@
     <!-- Page level custom scripts -->
     <script src="{{ asset('assets/backend/js/demo/datatables-demo.js') }}"></script>
 
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+
 </body>
 
 </html>

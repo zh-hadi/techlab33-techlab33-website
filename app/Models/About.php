@@ -14,9 +14,12 @@ class About extends Model
         'title',
         'content',
         'video_url',
+        'image',
         'clients',
         'projects',
         'hoursofsupport',
         'workers',
+        'skill_title',
+        'testimonial_title'
     ];
 }

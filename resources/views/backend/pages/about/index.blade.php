@@ -16,7 +16,7 @@
     </div>
     @endif
 
-    <form action="{{ route('abouts.update', $about->id ?? '') }}" method="POST">
+    <form action="{{ route('abouts.update', $about->id ?? '') }}" method="POST" enctype="multipart/form-data" >
         @csrf
         @if(isset($about)) @method('PUT') @endif
 
@@ -30,7 +30,7 @@
         <div class="form-group row mt-3">
             <label class="col-sm-2 col-form-label">Content</label>
             <div class="col-sm-10">
-                <textarea name="content" class="form-control" rows="5" placeholder="Enter content">{{ old('content', $about->content ?? '') }}</textarea>
+                <textarea name="content" class="ckeditor form-control" rows="5" placeholder="Enter content">{{ old('content', $about->content ?? '') }}</textarea>
             </div>
         </div>
 
@@ -38,6 +38,18 @@
             <label class="col-sm-2 col-form-label">Video URL</label>
             <div class="col-sm-10">
                 <input type="url" name="video_url" class="form-control" value="{{ old('video_url', $about->video_url ?? '') }}" placeholder="YouTube or Vimeo link">
+            </div>
+        </div>
+
+       <div class="form-group row mt-3">
+            <label class="col-sm-2 col-form-label">Thumbnail Image</label>
+            <div class="col-sm-10">
+                <input type="file" name="image" class="form-control" accept="image/*">
+                @if (!empty($about->image))
+                    <div class="mt-2">
+                        <img src="{{ image($about->image) }}" alt="Current Image" width="120">
+                    </div>
+                @endif
             </div>
         </div>
 
@@ -69,11 +81,28 @@
             </div>
         </div>
 
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Testimonial Title</label>
+            <div class="col-sm-10">
+                <input type="text" name="testimonial_title" class="form-control" value="{{ old('testimonial_title', $about->testimonial_title ?? '') }}" placeholder="Enter title">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Skill Title</label>
+            <div class="col-sm-10">
+                <input type="text" name="skill_title" class="form-control" value="{{ old('skill_title', $about->skill_title ?? '') }}" placeholder="Enter title">
+            </div>
+        </div>
+
         <div class="form-group row mt-4">
             <div class="col-sm-10 offset-sm-2">
                 <button type="submit" class="btn btn-primary">{{ isset($about) ? 'Update' : 'Create' }}</button>
             </div>
         </div>
+
+
+        
     </form>
 
 

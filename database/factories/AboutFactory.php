@@ -24,6 +24,8 @@ class AboutFactory extends Factory
             'projects' => '453',
             'hoursofsupport' => '1540',
             'workers' => '08',
+            'skill_title' => fake()->paragraph(),
+            'testimonial_title' => fake()->paragraph()
         ];
     }
 }

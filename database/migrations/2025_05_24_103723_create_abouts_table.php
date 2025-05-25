@@ -16,10 +16,13 @@ return new class extends Migration
             $table->string('title');
             $table->longText('content');
             $table->string('video_url')->nullable();
+            $table->string('image')->nullable();
             $table->string('clients');
             $table->string('projects');
             $table->string('hoursofsupport');
             $table->string('workers');
+            $table->string('skill_title');
+            $table->string('testimonial_title');
             $table->timestamps();
         });
     }
