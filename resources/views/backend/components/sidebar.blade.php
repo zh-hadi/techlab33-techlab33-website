@@ -43,6 +43,23 @@
                 </div>
             </li>
 
+             <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#aboutpage"
+                    aria-expanded="true" aria-controls="aboutpage">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>About Page</span>
+                </a>
+                <div id="aboutpage" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Custom Components:</h6>
+                        <a class="collapse-item" href="{{  route('abouts.index') }}">About US Manage</a>
+                        <a class="collapse-item" href="{{ route('business-partners.index') }}">Partner Manage</a>
+                        <a class="collapse-item" href="{{  route('testimonials.index') }}">Testimonials Manage</a>
+                        <a class="collapse-item" href="{{  route('skills.index') }}">Skills Manage</a>
+                    </div>
+                </div>
+            </li>
+
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"

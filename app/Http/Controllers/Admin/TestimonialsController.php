@@ -14,6 +14,12 @@ class TestimonialsController extends Controller
 
     public function __construct(protected  FileService $fileServices){}
 
+    public function index()
+    {
+        return view('backend.pages.testimonials.index', [
+            'testimonials' => Testimonial::latest()->get()
+        ]);
+    }
 
     public function store(StoreTestmonialRequest $request)
     {

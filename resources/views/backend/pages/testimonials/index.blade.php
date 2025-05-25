@@ -1,4 +1,11 @@
-    <div>
+@extends('backend.layouts.main')
+
+@section('content')
+
+<div>
+
+
+       <div>
         <div class="p-2 text-center font-weight-bolder" style="background-color: #4e73df">
             <div class="text-white">Testimonials Manage</div>
         </div>
@@ -62,7 +69,7 @@
                 </button>
             </div>
             <div class="modal-body row">
-                @include('backend.pages.about.testimonials.edit_form', ['testimonial' => $testimonial])
+                @include('backend.pages.testimonials.edit_form', ['testimonial' => $testimonial])
             </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-primary">Update</button>
@@ -121,7 +128,7 @@
                         </button>
                     </div>
                     <div class="modal-body row">
-                        @include('backend.pages.about.testimonials.create_form')
+                        @include('backend.pages.testimonials.create_form')
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-success">Add</button>
@@ -131,3 +138,9 @@
         </div>
     </div>
 </div>
+
+
+</div>
+</div>
+
+@endsection

@@ -11,6 +11,12 @@ class BusinessPartnerController extends Controller
 {
     public function __construct(protected FileService $fileServices) {}
 
+    public function index()
+    {
+        return view('backend.pages.business_partner.index', [
+            'businessPartners' => BusinessPartner::latest()->get()
+        ]);
+    }
     public function store(Request $request)
     {
         $attributes = $request->validate([

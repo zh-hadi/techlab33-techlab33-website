@@ -1,3 +1,7 @@
+@extends('backend.layouts.main')
+
+@section('content')
+
 <div>
     <div class="p-2 text-center font-weight-bolder" style="background-color: #4e73df">
         <div class="text-white">Business Partners Manage</div>
@@ -53,7 +57,7 @@
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
                         </div>
                         <div class="modal-body row">
-                            @include('backend.pages.about.business_partner.edit_form', ['partner' => $partner])
+                            @include('backend.pages.business_partner.edit_form', ['partner' => $partner])
                         </div>
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-primary">Update</button>
@@ -103,7 +107,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
                 </div>
                 <div class="modal-body row">
-                    @include('backend.pages.about.business_partner.create_form')
+                    @include('backend.pages.business_partner.create_form')
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-success">Add</button>
@@ -112,3 +116,6 @@
         </div>
     </div>
 </div>
+
+
+@endsection
