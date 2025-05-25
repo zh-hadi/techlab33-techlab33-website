@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\About;
+use App\Models\BusinessPartner;
 use App\Models\Testimonial;
 
 class AboutController extends Controller
@@ -14,6 +15,7 @@ class AboutController extends Controller
         return view('backend.pages.about.index', [
             'about' => About::first(),
             'testimonials' => Testimonial::latest()->get(),
+            'businessPartners' => BusinessPartner::latest()->get(),
         ]);
     }
 

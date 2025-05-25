@@ -81,7 +81,7 @@
     @include('backend.pages.about.testimonials.index')
 
 
-
+    @include('backend.pages.about.business_partner.index')
 @endsection
 
 
