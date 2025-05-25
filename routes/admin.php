@@ -18,7 +18,7 @@ Route::prefix('admin/')->group(function(){
     Route::resource('login', LoginController::class)->only(['index', 'store']);
     Route::get('logout', LogoutController::class)->name('logout');
 
-    Route::middleware(AuthCheckMiddleware::class)->group(function(){
+    Route::middleware(['auth'])->group(function(){
         Route::resource('settings', SettingController::class)->only(['index', 'update']);
         Route::resource('aboutpage/abouts', AboutController::class)->only(['index', 'update']);
         Route::resource('aboutpage/testimonials', TestimonialsController::class)->only(['index', 'store', 'update', 'destroy']);
