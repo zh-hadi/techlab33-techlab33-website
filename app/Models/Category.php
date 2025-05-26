@@ -10,8 +10,15 @@ class Category extends Model
     /** @use HasFactory<\Database\Factories\CategoryFactory> */
     use HasFactory;
 
+    protected $table = 'categories';
+
     protected $fillable = [
         'name',
         'slug',
     ];
+
+     public function posts()
+    {
+        return $this->belongsToMany(Post::class, 'post_category');
+    }
 }

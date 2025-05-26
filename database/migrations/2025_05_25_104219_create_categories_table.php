@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Category;
+use App\Models\Post;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -17,6 +19,13 @@ return new class extends Migration
             $table->string('slug');
             $table->timestamps();
         });
+
+        Schema::create('post_category', function (Blueprint $table) {
+            $table->id();
+            $table->foreignIdFor(Post::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(Category::class)->constrained()->cascadeOnDelete();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -25,5 +34,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('categories');
+        Schema::dropIfExists('post_category');
     }
 };
