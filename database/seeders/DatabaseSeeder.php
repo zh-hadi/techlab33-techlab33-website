@@ -24,7 +24,10 @@ class DatabaseSeeder extends Seeder
             SettingSeeder::class,
             TestimonialSeeder::class,
             AboutSeeder::class,
-            SkillSeeder::class
+            SkillSeeder::class,
+            CategorySeeder::class,
+            TagSeeder::class,
+            PostSeeder::class
         ]);
     }
 }

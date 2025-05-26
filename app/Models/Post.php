@@ -16,4 +16,10 @@ class Post extends Model
         'image',
         'content',
     ];
+
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
 }
