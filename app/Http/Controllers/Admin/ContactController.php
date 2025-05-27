@@ -35,7 +35,7 @@ class ContactController extends Controller
 
         $contact = Contact::create($attributes);
 
-         if ($request->ajax()) {
+        if ($request->ajax()) {
             return response('OK', 200);
         }
         //  if ($contact->ajax()) {
