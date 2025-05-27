@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Admin\Auth\LogoutController;
 use App\Http\Controllers\Admin\BusinessPartnerController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SkillController;
@@ -32,6 +33,8 @@ Route::prefix('admin/')->group(function(){
         Route::resource('blog/tags', TagController::class)->only(['index', 'store', 'update', 'destroy']);
         Route::resource('blog/categories', CategoryController::class)->only(['index', 'store', 'update', 'destroy']);
         Route::resource('blog/posts', PostController::class);
-    });
 
+    });
+    
+    Route::resource('contacts', ContactController::class)->except(['store']);
 });
