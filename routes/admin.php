@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\ProjectCategoryController;
+use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SkillController;
 use App\Http\Controllers\Admin\TagController;
@@ -37,5 +38,8 @@ Route::prefix('admin/')->group(function(){
 
         Route::resource('contacts', ContactController::class)->except(['store']);
     });
-    Route::resource('porject-category', ProjectCategoryController::class);
+    Route::resource('project-category', ProjectCategoryController::class);
+    Route::resource('projects', ProjectController::class);
+    Route::delete('/projects/image/{image}', [ProjectController::class, 'deleteImage'])->name('projects.image.delete');
+
 });

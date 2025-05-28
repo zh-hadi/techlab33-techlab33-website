@@ -11,3 +11,7 @@ $(document).ready(function() {
 $(document).ready(function() {
   $('#contact_dataTable').DataTable();
 });
+
+$(document).ready(function() {
+  $('#project_dataTable').DataTable();
+});

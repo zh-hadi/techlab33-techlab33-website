@@ -40,7 +40,7 @@
             <!-- Edit Modal -->
             <div class="modal fade" id="category_edit_modal{{ $category->id }}" tabindex="-1" role="dialog">
                 <div class="modal-dialog modal-lg" role="document">
-                    <form action="{{ route('porject-category.update', $category->id) }}" method="POST" class="modal-content">
+                    <form action="{{ route('project-category.update', $category->id) }}" method="POST" class="modal-content">
                         @csrf @method('PUT')
                         <div class="modal-header">
                             <h5 class="modal-title">Edit Category</h5>
@@ -59,7 +59,7 @@
             <!-- Delete Modal -->
             <div class="modal fade" id="category_delete_modal{{ $category->id }}" tabindex="-1" role="dialog">
                 <div class="modal-dialog" role="document">
-                    <form action="{{ route('porject-category.destroy', $category->id) }}" method="POST" class="modal-content">
+                    <form action="{{ route('project-category.destroy', $category->id) }}" method="POST" class="modal-content">
                         @csrf @method('DELETE')
                         <div class="modal-header">
                             <h5 class="modal-title">Delete Category</h5>
@@ -81,7 +81,7 @@
     <!-- Add Modal -->
     <div class="modal fade" id="category_add_modal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
-            <form action="{{ route('porject-category.store') }}" method="POST" class="modal-content">
+            <form action="{{ route('project-category.store') }}" method="POST" class="modal-content">
                 @csrf
                 <div class="modal-header">
                     <h5 class="modal-title">Add New Category</h5>

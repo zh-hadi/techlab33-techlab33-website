@@ -86,6 +86,22 @@
                 </div>
             </li>
 
+             <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#projectpage"
+                    aria-expanded="true" aria-controls="projectpage">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Project Content</span>
+                </a>
+                <div id="projectpage" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        {{-- <h6 class="collapse-header">Custom Components:</h6> --}}
+                        <a class="collapse-item" href="{{  route('projects.index') }}">Project  Manage</a>
+                        <a class="collapse-item" href="{{ route('project-category.index') }}">Project Category Manage</a>
+                      
+                    </div>
+                </div>
+            </li>
+
          
 
     

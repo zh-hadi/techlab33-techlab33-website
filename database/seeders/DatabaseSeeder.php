@@ -31,6 +31,7 @@ class DatabaseSeeder extends Seeder
             PostSeeder::class,
             ContactSeeder::class,
             ProjectCategorySeeder::class,
+            ProjectSeeder::class
         ]);
     }
 }
