@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutPageController;
 use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\BlogPageController;
+use App\Http\Controllers\ProjectPageController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -19,6 +20,7 @@ Route::post('contacts', [ContactController::class, 'store'])->name('contacts.sto
 Route::resource('blogs', BlogPageController::class)->except('show');
 Route::get('blogs/{slug}', [BlogPageController::class, 'show'])->name('blogs.show');
 Route::get('about', [AboutPageController::class, 'index'])->name('about.page');
+Route::resource('projects', ProjectPageController::class);
 
 
 include('admin.php');
