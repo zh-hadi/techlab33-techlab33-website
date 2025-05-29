@@ -40,11 +40,15 @@
             @foreach ($projects as $project)
                 <div class="col-lg-4 col-md-6 portfolio-item isotope-item {{ 'filter-'. $project->category->slug }}">
                   <div class="portfolio-content h-100">
-                      <img src="{{ asset('assets/frontend/img/portfolio/app-1.jpg') }}" class="img-fluid" alt="">
+                      @foreach ($project->images as $index => $image)
+                        @if($index == 0)
+                          <img src="{{ image( $image->image_path ) }}" class="img-fluid" alt="">
+                        @endif
+                      @endforeach
                       <div class="portfolio-info">
                       <h4>{{ $project->category->name }}</h4>
                       <p>{{ $project->name }}</p>
-                      <a href="{{ asset('assets/frontend/img/portfolio/app-1.jpg') }}" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                      <a href="" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                       <a href="{{  route('projectpage.show', ['slug' => $project->slug ]) }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                       </div>
                   </div>

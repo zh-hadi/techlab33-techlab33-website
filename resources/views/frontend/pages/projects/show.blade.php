@@ -52,7 +52,7 @@
                     </div>
                 @endforeach
 
-{{-- 
+              {{-- 
                 <div class="swiper-slide">
                   <img src="assets/img/portfolio/product-1.jpg" alt="">
                 </div>

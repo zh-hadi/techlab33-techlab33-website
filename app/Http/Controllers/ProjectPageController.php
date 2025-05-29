@@ -12,7 +12,6 @@ class ProjectPageController extends Controller
     {
         $projects = Project::with(['category', 'images'])->latest()->get();
         $categories = ProjectCategory::all();
-
       return view('frontend.pages.projects.index', [
             'projects' => $projects,
             'categories' => $categories,
