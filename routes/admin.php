@@ -37,9 +37,10 @@ Route::prefix('admin/')->group(function(){
         Route::resource('blog/posts', PostController::class);
 
         Route::resource('contacts', ContactController::class)->except(['store']);
+        
+        Route::resource('project-category', ProjectCategoryController::class);
+        Route::resource('projects', ProjectController::class);
+        Route::delete('/projects/image/{image}', [ProjectController::class, 'deleteImage'])->name('projects.image.delete');
     });
-    Route::resource('project-category', ProjectCategoryController::class);
-    Route::resource('projects', ProjectController::class);
-    Route::delete('/projects/image/{image}', [ProjectController::class, 'deleteImage'])->name('projects.image.delete');
 
 });

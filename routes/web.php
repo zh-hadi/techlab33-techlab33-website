@@ -20,7 +20,7 @@ Route::post('contacts', [ContactController::class, 'store'])->name('contacts.sto
 Route::resource('blogs', BlogPageController::class)->except('show');
 Route::get('blogs/{slug}', [BlogPageController::class, 'show'])->name('blogs.show');
 Route::get('about', [AboutPageController::class, 'index'])->name('about.page');
-Route::resource('projects', ProjectPageController::class);
-
+Route::resource('projects', ProjectPageController::class)->except('show')->names('projectspage');
+Route::get('projects/{slug}', [ProjectPageController::class, 'show'])->name('projectpage.show');
 
 include('admin.php');
