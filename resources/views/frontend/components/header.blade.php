@@ -11,9 +11,9 @@
         <ul>
           <li><a href="{{  route('home.page') }}" class="{{  request()->routeIs('home.page') ? 'active' : '' }}">Home</a></li>
           <li><a href="{{  route('about.page') }}" class="{{  request()->routeIs('about.page') ? 'active' : '' }}">About</a></li>
-          <li><a href="services.html">Services</a></li>
+          <li><a href="{{  route('servicespage.index') }}">Services</a></li>
           <li><a href="{{  route('projectspage.index') }}">Projects</a></li>
-          <li><a href="team.html">Team</a></li>
+          {{-- <li><a href="team.html">Team</a></li> --}}
           <li><a href="{{  route('blogs.index') }}" class="{{  request()->routeIs('blogs.index') ? 'active' : '' }}">Blog</a></li>
           {{-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>

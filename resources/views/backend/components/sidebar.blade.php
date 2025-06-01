@@ -28,6 +28,12 @@
                     <span>Contact List</span></a>
             </li>
 
+             <li class="nav-item active">
+                <a class="nav-link" href="{{ route('features.index') }}">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Feature Manage</span></a>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -41,7 +47,7 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Components</span>
+                    <span>Home Page</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
@@ -97,6 +103,22 @@
                         {{-- <h6 class="collapse-header">Custom Components:</h6> --}}
                         <a class="collapse-item" href="{{  route('projects.index') }}">Project  Manage</a>
                         <a class="collapse-item" href="{{ route('project-category.index') }}">Project Category Manage</a>
+                      
+                    </div>
+                </div>
+            </li>
+
+             <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#servicespage"
+                    aria-expanded="true" aria-controls="servicespage">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Services Content</span>
+                </a>
+                <div id="servicespage" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        {{-- <h6 class="collapse-header">Custom Components:</h6> --}}
+                        <a class="collapse-item" href="">Service Manage</a>
+                        <a class="collapse-item" href="{{  route('service-categories.index') }}">Service Cagegory  Manage</a>
                       
                     </div>
                 </div>

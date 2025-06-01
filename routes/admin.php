@@ -6,9 +6,11 @@ use App\Http\Controllers\Admin\Auth\LogoutController;
 use App\Http\Controllers\Admin\BusinessPartnerController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\FeatureController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\ProjectCategoryController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\ServiceCategoryController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SkillController;
 use App\Http\Controllers\Admin\TagController;
@@ -41,6 +43,10 @@ Route::prefix('admin/')->group(function(){
         Route::resource('project-category', ProjectCategoryController::class);
         Route::resource('projects', ProjectController::class);
         Route::delete('/projects/image/{image}', [ProjectController::class, 'deleteImage'])->name('projects.image.delete');
+
+        Route::resource('service-categories', ServiceCategoryController::class);
+
+        Route::resource('features', FeatureController::class);
     });
 
 });

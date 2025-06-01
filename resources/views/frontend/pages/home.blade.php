@@ -13,15 +13,18 @@
 
         <div class="container position-relative">
 
-          <div class="carousel-item active">
-            <div class="carousel-container">
-              <h2>Welcome to Moderna</h2>
-              <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-              <a href="#about" class="btn-get-started">Read More</a>
-            </div>
-          </div><!-- End Carousel Item -->
 
-          <div class="carousel-item">
+          @foreach ($blogs as $index => $blog)
+            <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+              <div class="carousel-container">
+                <h2>{{  $blog->title}}</h2>
+                <p>{{ Str::limit($blog->content, 200) }}</p>
+                <a href="{{  route('blogs.show', ['slug' => $blog->slug ]) }}" class="btn-get-started">Read More</a>
+              </div>
+            </div><!-- End Carousel Item -->
+          @endforeach
+
+          {{-- <div class="carousel-item">
             <div class="carousel-container">
               <h2>Lorem Ipsum Dolor</h2>
               <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
@@ -35,7 +38,7 @@
               <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
               <a href="#about" class="btn-get-started">Read More</a>
             </div>
-          </div><!-- End Carousel Item -->
+          </div><!-- End Carousel Item --> --}}
 
           <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
             <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
@@ -53,7 +56,36 @@
 
     </section><!-- /Hero Section -->
 
-    <!-- Featured Services Section -->
+
+      <!-- Featured Services Section -->
+    <section id="featured-services" class="featured-services section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+            @foreach ($service_categories as $item)
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-item item-cyan position-relative">
+                    <div class="icon">
+                    <i class="{{ $item->icon }}"></i>
+                    </div>
+                    <a href="service-details.html" class="stretched-link">
+                    <h3>{{ $item->name }}</h3>
+                    </a>
+                    <p>{{ $item->description }}</p>
+                </div>
+                </div><!-- End Service Item -->
+            @endforeach
+
+
+        
+
+      </div>
+
+    </section><!-- /Featured Services Section -->
+
+    {{-- <!-- Featured Services Section -->
     <section id="featured-services" class="featured-services section">
 
       <div class="container">
@@ -112,20 +144,22 @@
 
       </div>
 
-    </section><!-- /Featured Services Section -->
+    </section><!-- /Featured Services Section --> --}}
 
-    <!-- About Section -->
+
+     <!-- About Section -->
     <section id="about" class="about section light-background">
 
       <div class="container">
 
         <div class="row gy-4">
           <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="100">
-            <img src="assets/img/about.jpg" class="img-fluid" alt="">
-            <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
+            <img src="{{  image($aboutdata->image) }}" class="img-fluid" alt="">
+            <a href="{{  $aboutdata->video_url ?? '' }}" class="glightbox pulsating-play-btn"></a>
           </div>
           <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="200">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+            <div>{!! $aboutdata->content  !!}</div>
+            {{-- <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
             <p class="fst-italic">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
               magna aliqua.
@@ -138,7 +172,7 @@
             <p>
               Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
               velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
-            </p>
+            </p> --}}
           </div>
         </div>
 
@@ -157,24 +191,31 @@
 
       <div class="container">
 
-        <div class="row gy-4 align-items-center features-item">
-          <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
-            <img src="assets/img/features-1.svg" class="img-fluid" alt="">
-          </div>
-          <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-            <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <ul>
-              <li><i class="bi bi-check"></i><span> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-              <li><i class="bi bi-check"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-              <li><i class="bi bi-check"></i> <span>Ullam est qui quos consequatur eos accusamus.</span></li>
-            </ul>
-          </div>
-        </div><!-- Features Item -->
 
+        @foreach ($features as $index => $feature)
+          <div class="row gy-4 align-items-center features-item">
+            <div class="col-md-5 d-flex align-items-center {{ $index % 2 == 0 ? 'order-1' : '' }}" data-aos="zoom-out" data-aos-delay="100">
+              <img src="assets/img/features-1.svg" class="img-fluid" alt="">
+            </div>
+            <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
+              <h3>{{ $feature->title }}</h3>
+              <div>
+                {{  $feature->content }}
+              </div>
+              {{-- <p class="fst-italic">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua.
+              </p>
+              <ul>
+                <li><i class="bi bi-check"></i><span> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
+                <li><i class="bi bi-check"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
+                <li><i class="bi bi-check"></i> <span>Ullam est qui quos consequatur eos accusamus.</span></li>
+              </ul> --}}
+            </div>
+          </div><!-- Features Item -->
+        @endforeach
+
+{{-- 
         <div class="row gy-4 align-items-center features-item">
           <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
             <img src="assets/img/features-2.svg" class="img-fluid" alt="">
@@ -224,7 +265,7 @@
               culpa qui officia deserunt mollit anim id est laborum
             </p>
           </div>
-        </div><!-- Features Item -->
+        </div><!-- Features Item --> --}}
 
       </div>
 
