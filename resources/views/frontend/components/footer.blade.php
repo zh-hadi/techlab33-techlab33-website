@@ -47,10 +47,12 @@
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Our Services</h4>
           <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
+            @foreach ($c_services as $item)
+              <li><i class="bi bi-chevron-right"></i> <a href="{{  route('servicespage.show', ['slug' => $item->slug ]) }}">{{ $item->name }}</a></li>
+            @endforeach
+            {{-- <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
             <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li> --}}
           </ul>
         </div>
 

@@ -2,11 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\Models\ServiceCategory;
+use App\Models\Service;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
-class ServiceCategorySeeder extends Seeder
+class ServiceSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -30,17 +31,18 @@ class ServiceCategorySeeder extends Seeder
                 'icon' => 'bi bi-cpu',
             ],
             [
-                'name' => 'UI/UX Design',
-                'description' => 'We design user-friendly interfaces with smooth experiences that enhance engagement and reflect your brand identity perfectly.',
-                'icon' => 'bi bi-easel',
-            ]
+                'name' => 'AI Service Development',
+                'description' => 'We build intelligent AI-powered tools that automate tasks, enhance decision-making, and improve user interactions efficiently.',
+                'icon' => 'bi bi-robot',
+            ],
         ];
 
 
 
         foreach($data as $item){
-            ServiceCategory::factory()->create([
+            Service::factory()->create([
                 'name' => $item['name'],
+                'slug' => Str::slug($item['name']),
                 'description' => $item['description'],
                 'icon' => $item['icon']
             ]);

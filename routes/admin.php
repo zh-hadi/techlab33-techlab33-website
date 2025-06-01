@@ -10,12 +10,11 @@ use App\Http\Controllers\Admin\FeatureController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\ProjectCategoryController;
 use App\Http\Controllers\Admin\ProjectController;
-use App\Http\Controllers\Admin\ServiceCategoryController;
+use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SkillController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\TestimonialsController;
-use App\Http\Middleware\AuthCheckMiddleware;
 use Illuminate\Support\Facades\Route;
 
 
@@ -44,7 +43,7 @@ Route::prefix('admin/')->group(function(){
         Route::resource('projects', ProjectController::class);
         Route::delete('/projects/image/{image}', [ProjectController::class, 'deleteImage'])->name('projects.image.delete');
 
-        Route::resource('service-categories', ServiceCategoryController::class);
+        Route::resource('services', ServiceController::class);
 
         Route::resource('features', FeatureController::class);
     });

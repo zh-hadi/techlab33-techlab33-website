@@ -8,6 +8,7 @@ use App\Models\ServiceCategory;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -19,9 +20,10 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         User::factory()->create([
-            'name' => 'Hadiuzzaman',
-            'email' => 'h@g.c',
-        ]);
+            'name' => 'Techlab33 Ltd',
+            'email' => 'admin@admin.com',
+            'password' => Hash::make('admin@admin.com'),
+         ]);
 
         $this->call([
             SettingSeeder::class,
@@ -34,7 +36,7 @@ class DatabaseSeeder extends Seeder
             ContactSeeder::class,
             ProjectCategorySeeder::class,
             ProjectSeeder::class,
-            ServiceCategorySeeder::class,
+            ServiceSeeder::class,
             FeatureSeeder::class,
         ]);
     }

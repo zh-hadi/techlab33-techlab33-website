@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ServiceCategory;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class ServicesPageController extends Controller
@@ -10,12 +10,19 @@ class ServicesPageController extends Controller
     public function index()
     {
         return view('frontend.pages.services.index', [
-            'service_categories' => ServiceCategory::where('status', true)->get(),
+            'service_categories' => Service::where('status', true)->get(),
+            'services' => Service::where('status', true)->get(),
         ]);
     }
 
-    public function show()
+    public function show($slug)
     {
-        return view('frontend.pages.services.show');
+        $service = Service::where('slug', $slug)->first();
+
+        // return $service;
+        return view('frontend.pages.services.show', [
+            'service' => $service,
+            'services' => Service::where('status', true)->get(),
+        ]);
     }
 }

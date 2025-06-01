@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Feature;
 use App\Models\Post;
-use App\Models\ServiceCategory;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 
@@ -15,7 +15,7 @@ class HomePageController extends Controller
     {
         return view('frontend.pages.home', [
             'blogs' => Post::take(3)->get(),
-            'service_categories' => ServiceCategory::where('status', true)->get(),
+            'service_categories' => Service::where('status', true)->get(),
             'aboutdata' => About::first(),
             'features' => Feature::all(),
         ]);

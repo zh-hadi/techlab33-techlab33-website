@@ -4,8 +4,18 @@
 </div>
 
 <div class="form-group col-md-12">
+    <label for="slug">Slug</label>
+    <input type="text" class="form-control" name="slug" value="{{ $serviceCategory->slug }}">
+</div>
+
+<div class="form-group col-md-12">
     <label for="description">Description</label>
     <textarea class="form-control" name="description" rows="3">{{ $serviceCategory->description }}</textarea>
+</div>
+
+<div class="form-group col-md-12">
+    <label for="content">Content</label>
+    <textarea class="ckeditor form-control" name="content" rows="5">{{ $serviceCategory->content }}</textarea>
 </div>
 
 <div class="form-group col-md-6">
@@ -14,6 +24,13 @@
     <small class="text-muted">Example: bi bi-activity</small>
 </div>
 
+<div class="form-group col-md-6">
+    <label for="image">Image</label>
+    <input type="file" class="form-control" name="image">
+    @if ($serviceCategory->image)
+        <img src="{{ asset('storage/' . $serviceCategory->image) }}" alt="Image" width="100" class="mt-2">
+    @endif
+</div>
 
 <div class="form-group col-md-12">
     <label for="status">Status</label>

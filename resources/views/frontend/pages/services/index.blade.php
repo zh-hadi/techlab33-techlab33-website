@@ -30,7 +30,7 @@
                     <div class="icon">
                     <i class="{{ $item->icon }}"></i>
                     </div>
-                    <a href="service-details.html" class="stretched-link">
+                    <a href="{{  route('servicespage.show', ['slug' => $item->slug ]) }}" class="stretched-link">
                     <h3>{{ $item->name }}</h3>
                     </a>
                     <p>{{ $item->description }}</p>
@@ -52,21 +52,25 @@
 
         <div class="row gy-4">
 
-          <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="img">
-                <img src="assets/img/services-1.jpg" class="img-fluid" alt="">
-              </div>
-              <div class="details">
-                <a href="service-details.html" class="stretched-link">
-                  <h3>Nesciunt Mete</h3>
-                </a>
-                <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis.</p>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
+            @foreach ($services as $index =>  $service)
+                <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="{{ $index + 2}}00">
+                    <div class="service-item position-relative">
+                        <div class="img">
+                        <img src="{{  image($service->image ) }}" class="img-fluid" alt="">
+                        </div>
+                        <div class="details">
+                        <a href="{{  route('servicespage.show', ['slug' => $service->slug ]) }}" class="stretched-link">
+                            <h3>{{ $service->name }}</h3>
+                        </a>
+                        <p>
+                        {{  $service->description }}
+                        </p>
+                        </div>
+                    </div>
+                </div><!-- End Service Item -->
+            @endforeach
 
-          <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="300">
+          {{-- <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="300">
             <div class="service-item position-relative">
               <div class="img">
                 <img src="assets/img/services-2.jpg" class="img-fluid" alt="">
@@ -83,7 +87,7 @@
           <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="400">
             <div class="service-item position-relative">
               <div class="img">
-                <img src="assets/img/services-3.jpg" class="img-fluid" alt="">
+                <img src="{{ asset('assets/frontend/img/services-3.jpg') }}" class="img-fluid" alt="">
               </div>
               <div class="details">
                 <a href="service-details.html" class="stretched-link">
@@ -107,7 +111,7 @@
                 <a href="service-details.html" class="stretched-link"></a>
               </div>
             </div>
-          </div><!-- End Service Item -->
+          </div><!-- End Service Item --> --}}
 
         </div>
 

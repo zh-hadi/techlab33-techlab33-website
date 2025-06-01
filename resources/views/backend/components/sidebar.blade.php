@@ -117,17 +117,13 @@
                 <div id="servicespage" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         {{-- <h6 class="collapse-header">Custom Components:</h6> --}}
-                        <a class="collapse-item" href="">Service Manage</a>
-                        <a class="collapse-item" href="{{  route('service-categories.index') }}">Service Cagegory  Manage</a>
+                        <a class="collapse-item" href="{{  route('services.index') }}">Service Manage</a>
                       
                     </div>
                 </div>
             </li>
 
          
-
-    
-
            
             <!-- Nav Item - Tables -->
             <li class="nav-item">

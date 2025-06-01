@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ServiceCategory>
  */
-class ServiceCategoryFactory extends Factory
+class ServiceFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +17,7 @@ class ServiceCategoryFactory extends Factory
     public function definition(): array
     {
         return [
-            
+            'content' => fake()->paragraph(10)
         ];
     }
 }

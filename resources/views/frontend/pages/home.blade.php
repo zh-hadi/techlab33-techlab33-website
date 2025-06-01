@@ -70,7 +70,7 @@
                     <div class="icon">
                     <i class="{{ $item->icon }}"></i>
                     </div>
-                    <a href="service-details.html" class="stretched-link">
+                    <a href="{{  route('servicespage.show', ['slug' => $item->slug ]) }}" class="stretched-link">
                     <h3>{{ $item->name }}</h3>
                     </a>
                     <p>{{ $item->description }}</p>
