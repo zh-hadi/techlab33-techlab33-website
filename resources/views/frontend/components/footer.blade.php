@@ -60,10 +60,10 @@
           <h4>Follow Us</h4>
           <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
           <div class="social-links d-flex">
-            <a href="{{ $settings->x_link }}"><i class="bi bi-twitter-x"></i></a>
-            <a href="{{ $settings->facebook_link }}"><i class="bi bi-facebook"></i></a>
-            <a href="{{ $settings->instagram_link }}"><i class="bi bi-instagram"></i></a>
-            <a href="{{ $settings->linkedin_link }}"><i class="bi bi-linkedin"></i></a>
+            <a target="_blank" href="{{ $settings->x_link }}"><i class="bi bi-twitter-x"></i></a>
+            <a target="_blank" href="{{ $settings->facebook_link }}"><i class="bi bi-facebook"></i></a>
+            <a target="_blank" href="{{ $settings->instagram_link }}"><i class="bi bi-instagram"></i></a>
+            <a target="_blank" href="{{ $settings->linkedin_link }}"><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
 
