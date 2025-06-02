@@ -36,6 +36,7 @@ class BlogPageController extends Controller
 
 
         return view('frontend.pages.blog.index', [
+            'title' => 'Our Blog | TechLab33 Ltd',
             'blogs' => $blogs
         ]);
     }

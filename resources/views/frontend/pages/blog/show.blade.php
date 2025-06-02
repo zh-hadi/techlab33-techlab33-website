@@ -1,5 +1,7 @@
 @extends('frontend.layouts.main')
 
+@section('title', $post->title . ' | Blog | TechLab33 Ltd')
+
 @section('content')
 
 

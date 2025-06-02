@@ -12,7 +12,9 @@ class AboutPageController extends Controller
 {
     public function index()
     {
+        $title = "About US - Tech Lab33 Limited";
         return view('frontend.pages.about', [
+            'title' => $title,
             'aboutdata' => About::first(),
             'business_partners' => BusinessPartner::where('status', 'active')->latest()->get(),
             'skills' => Skill::where('status', 'active')->latest()->get(),

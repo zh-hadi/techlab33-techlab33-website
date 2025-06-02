@@ -1,5 +1,6 @@
 @extends('frontend.layouts.main')
 
+@section('title', $title ?? null)
 
 @section('content')
 

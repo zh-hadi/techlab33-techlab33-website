@@ -13,7 +13,9 @@ class HomePageController extends Controller
 {
     public function index()
     {
+        $title = "Tech Lab33 Limited - Complete IT Solution";
         return view('frontend.pages.home', [
+            'title' => $title,
             'blogs' => Post::take(3)->get(),
             'service_categories' => Service::where('status', true)->get(),
             'aboutdata' => About::first(),

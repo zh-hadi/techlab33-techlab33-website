@@ -12,7 +12,10 @@ class ProjectPageController extends Controller
     {
         $projects = Project::with(['category', 'images'])->latest()->get();
         $categories = ProjectCategory::all();
+        $title = 'Our Projects | TechLab33 Ltd';
+
       return view('frontend.pages.projects.index', [
+            'title' => $title,
             'projects' => $projects,
             'categories' => $categories,
         ]);

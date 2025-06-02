@@ -1,5 +1,6 @@
 @extends('frontend.layouts.main')
 
+@section('title', $project->name . ' | Projects | TechLab33 Ltd')
 
 @section('content')
 
