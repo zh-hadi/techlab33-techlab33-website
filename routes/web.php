@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\BlogPageController;
 use App\Http\Controllers\ProjectPageController;
 use App\Http\Controllers\ServicesPageController;
+use App\Http\Controllers\Admin\SubscribeController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -27,5 +28,7 @@ Route::get('projects/{slug}', [ProjectPageController::class, 'show'])->name('pro
 
 Route::resource('services', ServicesPageController::class)->only('index')->names('servicespage');
 Route::get('services/{slug}', [ServicesPageController::class, 'show'])->name('servicespage.show');
+
+Route::post('subscribes', [SubscribeController::class, 'store'])->name('subscribe.store');
 
 include('admin.php');

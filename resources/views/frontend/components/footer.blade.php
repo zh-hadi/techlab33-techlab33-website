@@ -6,7 +6,9 @@
           <div class="col-lg-6">
             <h4>Join Our Newsletter</h4>
             <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
-            <form action="forms/newsletter.php" method="post" class="php-email-form">
+            <form action="{{  route('subscribe.store') }}" method="post" class="php-email-form">
+              @csrf
+              
               <div class="newsletter-form"><input type="email" name="email" placeholder="E-mail Address"><input type="submit" value="Subscribe"></div>
               <div class="loading">Loading</div>
               <div class="error-message"></div>

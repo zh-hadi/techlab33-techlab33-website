@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SkillController;
+use App\Http\Controllers\Admin\SubscribeController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\TestimonialsController;
 use Illuminate\Support\Facades\Route;
@@ -46,6 +47,8 @@ Route::prefix('admin/')->group(function(){
         Route::resource('services', ServiceController::class);
 
         Route::resource('features', FeatureController::class);
+
+        Route::resource('subscribes', SubscribeController::class)->except(['store']);
     });
 
 });

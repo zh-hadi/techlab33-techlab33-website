@@ -15,3 +15,7 @@ $(document).ready(function() {
 $(document).ready(function() {
   $('#project_dataTable').DataTable();
 });
+
+$(document).ready(function() {
+  $('#email_dataTable').DataTable();
+});
