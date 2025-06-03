@@ -204,7 +204,7 @@
             <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
               <h3>{{ $feature->title }}</h3>
               <div>
-                {{  $feature->content }}
+                {!! $feature->content !!}
               </div>
               {{-- <p class="fst-italic">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore

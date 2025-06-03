@@ -9,7 +9,7 @@ class FeatureService {
     public function __construct(private FileService $fileService){}
     public function store(array $data)
     {
-        if($data['image']){
+        if(isset($data['image']) && $data['image']){
            $path = $this->fileService->upload('ab/check/', $data['image']);
            $data['image'] = $path;
         }else {
@@ -21,7 +21,7 @@ class FeatureService {
 
     public function update(Feature $feature, array $data)
     {
-        if($data['image']){
+        if(isset($data['image']) && $data['image']){
             $this->fileService->delete($feature->image);
 
             $path = $this->fileService->upload('feature/image/', $data['image']);
