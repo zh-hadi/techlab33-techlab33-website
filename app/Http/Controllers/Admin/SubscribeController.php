@@ -32,9 +32,10 @@ class SubscribeController extends Controller
     {
         $request->validate([
             'email' => 'required|email|max:255',
-            'status' => 'required|in:active,inactive',
+            'status' => 'required|boolean',
         ]);
 
+        
         $subscribe->update([
             'email' => $request->email,
             'status' => $request->status,

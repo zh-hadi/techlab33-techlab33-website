@@ -6,7 +6,7 @@
 <div class="form-group col-md-12">
     <label>Status</label>
     <select name="status" class="form-control" required>
-        <option value="active" {{ $emailItem->status === 'active' ? 'selected' : '' }}>Active</option>
-        <option value="inactive" {{ $emailItem->status === 'inactive' ? 'selected' : '' }}>Inactive</option>
+        <option value="1" {{ $emailItem->status == 1 ? 'selected' : '' }}>Active</option>
+        <option value="0" {{ $emailItem->status == 0 ? 'selected' : '' }}>Inactive</option>
     </select>
 </div>
