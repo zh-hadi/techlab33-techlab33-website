@@ -16,7 +16,34 @@ class FeatureSeeder extends Seeder
 
         $data = [
             [
-                'title' => 'Custom Software Development',
+    'title' => 'Web Development',
+    'content' => "<p>At TechLab33 Ltd, we build fast, secure, and user-friendly websites tailored to meet your business goals. From sleek landing pages to dynamic dashboards and full-featured web apps, our development team ensures your digital presence is modern, responsive, and scalable. We work with the latest technologies to deliver high-performance, SEO-optimized solutions.</p>
+
+<p>🔑 <strong>Key Points</strong>:</p>
+
+<ul>
+	<li>
+	<p>Custom websites and web applications</p>
+	</li>
+	<li>
+	<p>Laravel, React, Vue, and Next.js expertise</p>
+	</li>
+	<li>
+	<p>Mobile-first and responsive design</p>
+	</li>
+	<li>
+	<p>SEO-friendly and high-speed architecture</p>
+	</li>
+	<li>
+	<p>Scalable backends with API integration</p>
+	</li>
+</ul>
+
+<p>✅ <strong>Conclusion</strong>:<br />
+A powerful, well-built website not only represents your brand but also drives engagement, leads, and long-term business growth.</p>"
+            ],
+            [
+                'title' => 'Software Development',
                 'content' => "<p>We provide fully customized software solutions designed to meet the unique goals of your business. Whether you&#39;re a startup needing a prototype or an enterprise streamlining operations, our developers build scalable, secure, and efficient systems using modern technologies. We work closely with clients to ensure every feature aligns with their business objectives.</p>
 
 <p>🔑 <strong>Key Points:</strong></p>
@@ -137,9 +164,6 @@ Data-driven decisions powered by AI keep your business ahead of competitors and 
             ],
          
         ];
-       
-
-
 
         foreach($data as $item){
             Feature::factory()->create([
