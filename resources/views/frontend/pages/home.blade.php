@@ -22,7 +22,9 @@
             <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
               <div class="carousel-container">
                 <h2>{{  $blog->title}}</h2>
-                <p>{{ Str::limit($blog->content, 200) }}</p>
+                <div>
+                  <p>{{ Str::limit(strip_tags($blog->content), 200) }}</p>
+                </div>
                 <a href="{{  route('blogs.show', ['slug' => $blog->slug ]) }}" class="btn-get-started">Read More</a>
               </div>
             </div><!-- End Carousel Item -->

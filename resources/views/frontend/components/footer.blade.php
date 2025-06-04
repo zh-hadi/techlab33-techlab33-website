@@ -30,7 +30,7 @@
             
             <p class="col-lg-5">{{ $settings->address }}</p>
             {{-- <p>New York, NY 535022</p> --}}
-            <p class="mt-3"><strong>Telephone:</strong> <span>{{ $settings->website_logo }}</span></p>
+            <p class="mt-3"><strong>Telephone:</strong> <span>{{ $settings->telephone }}</span></p>
             <p class="mt-3"><strong>Phone:</strong> <span>{{ $settings->phone }}</span></p>
             <p><strong>Email:</strong> <span>{{ $settings->website_email }}</span></p>
           </div>

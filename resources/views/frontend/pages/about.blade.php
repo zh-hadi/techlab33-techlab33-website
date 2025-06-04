@@ -151,7 +151,7 @@
     </section><!-- /Clients Section -->
 
     <!-- Skills Section -->
-    <section id="skills" class="skills section">
+    {{-- <section id="skills" class="skills section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -200,7 +200,7 @@
 
       </div>
 
-    </section><!-- /Skills Section -->
+    </section><!-- /Skills Section --> --}}
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section">
