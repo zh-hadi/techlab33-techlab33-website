@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('facebook_link')->nullable();
             $table->string('linkedin_link')->nullable();
             $table->string('x_link')->nullable();
+            $table->string('youtube_link')->nullable();
             $table->string('instagram_link')->nullable();
             $table->text('google_map_location')->nullable();
             $table->timestamps();

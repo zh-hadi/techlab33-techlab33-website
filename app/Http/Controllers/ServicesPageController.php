@@ -21,6 +21,10 @@ class ServicesPageController extends Controller
     {
         $service = Service::where('slug', $slug)->first();
 
+         if (!$service) {
+            abort(404); 
+        }
+
         // return $service;
         return view('frontend.pages.services.show', [
             'service' => $service,

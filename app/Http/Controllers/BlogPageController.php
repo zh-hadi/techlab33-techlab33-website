@@ -48,6 +48,10 @@ class BlogPageController extends Controller
         $categories = Category::withCount('posts')->orderBy('posts_count', 'desc')->get();
         $recent_poste = Post::latest()->take(5)->get();
         $tags = Tag::all();
+
+         if (!$post) {
+            abort(404);  
+        }
         
         // return $recentPoste;
         return view('frontend.pages.blog.show', [

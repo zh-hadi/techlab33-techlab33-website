@@ -9,10 +9,12 @@
     <div class="page-title dark-background">
       <div class="container position-relative">
         <h1>Blog</h1>
-        <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam molestias.</p>
+        <p style="font-size: 18px;">Stay updated with the latest trends, insights, and innovations in technology, business, and digital solutions. At Techlab33 Ltd, our blog is a hub of knowledge where we share industry news, expert opinions, technical tutorials, and success stories that inspire and inform.
+
+Whether you're a tech enthusiast, business leader, or curious learner — our content is designed to add value and spark new ideas. Explore how smart technology and ethical innovation drive progress in today’s digital world.</p>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="{{  route('home.page') }}">Home</a></li>
             <li class="current">Blog</li>
           </ol>
         </nav>

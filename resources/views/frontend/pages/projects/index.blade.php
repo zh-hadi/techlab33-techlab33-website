@@ -8,10 +8,10 @@
     <div class="page-title dark-background">
       <div class="container position-relative">
         <h1>Projects</h1>
-        <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam molestias.</p>
+        <p>Delivering excellence through innovative solutions, Techlab33 Ltd’s projects showcase our commitment to quality, precision, and impactful results. Each project reflects our dedication to driving technological advancement and creating lasting value for our clients.</p>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="{{  route('home.page') }}">Home</a></li>
             <li class="current">Projects</li>
           </ol>
         </nav>

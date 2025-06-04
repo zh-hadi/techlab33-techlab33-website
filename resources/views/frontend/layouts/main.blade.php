@@ -11,7 +11,7 @@
 
   <!-- Favicons -->
   <link href="{{ image($settings->website_favicon) }}" rel="icon">
-  <link href="{{ asset('assets/frontend/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+  {{-- <link href="{{ asset('') }}" rel="apple-touch-icon"> --}}
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -42,6 +42,14 @@
         bottom: 80px;
         right: 30px;
         z-index: 1000;
+    }
+
+    .logo-image {
+        width: 300px;
+        /* height: 200px; */
+        object-fit: contain; /* keeps aspect ratio */
+        margin-left: -30px;
+        margin-top: -40px;
     }
   </style>
 </head>

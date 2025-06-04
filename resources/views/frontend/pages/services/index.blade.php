@@ -9,10 +9,10 @@
     <div class="page-title dark-background">
       <div class="container position-relative">
         <h1>Services</h1>
-        <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam molestias.</p>
+         <p>At Techlab33 Ltd, we provide a wide range of innovative technology solutions tailored to your business needs. From custom software development and IT consulting to digital transformation and system integration, our expert team delivers reliable, efficient, and scalable services designed to help your business grow and succeed in a competitive market.</p>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="{{ route('home.page') }}">Home</a></li>
             <li class="current">Services</li>
           </ol>
         </nav>

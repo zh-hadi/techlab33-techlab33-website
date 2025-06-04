@@ -9,10 +9,13 @@
     <div class="page-title dark-background">
       <div class="container position-relative">
         <h1>Contact</h1>
-        <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam molestias.</p>
+        <p style="font-size: 18px;">Your success is our priority. Whether you’re a client, partner, or curious visitor, feel free to reach out. Our dedicated team is ready to assist you with innovative solutions, insightful support, and timely responses.</p>
+        <div>
+          {{-- <p>Have a question, idea, or project in mind? We'd love to hear from you. At Techlab33 Ltd, we’re here to support your vision with smart solutions and expert advice. Whether you're looking for technical consultation or simply want to say hello, our team is just a message away. We take pride in our commitment to smart working principles—leveraging modern tools, agile practices, and thoughtful planning to deliver the best outcomes. Guided by strong professional ethics, transparency, and respect, Techlab33 Ltd ensures every client experience is built on trust and lasting value.</p> --}}
+        </div>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="{{  route('home.page') }}">Home</a></li>
             <li class="current">Contact</li>
           </ol>
         </nav>

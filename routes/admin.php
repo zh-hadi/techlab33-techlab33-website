@@ -23,14 +23,19 @@ use Illuminate\Support\Facades\Route;
 use App\Mail\NewsLaterMail;
 
 
-Route::view('admin', 'backend.pages.dashboard');
 
 Route::prefix('admin/')->group(function(){
-
+    
     Route::resource('login', LoginController::class)->only(['index', 'store']);
     Route::get('logout', LogoutController::class)->name('logout');
-
+    
     Route::middleware(['auth'])->group(function(){
+        Route::view('/', function(){
+            return redirect()->route('dashboard');
+        });
+
+        Route::view('/dashboard', 'backend.pages.dashboard')->name('dashboard');
+
         Route::resource('settings', SettingController::class)->only(['index', 'update']);
         Route::resource('aboutpage/abouts', AboutController::class)->only(['index', 'update']);
         Route::resource('aboutpage/testimonials', TestimonialsController::class)->only(['index', 'store', 'update', 'destroy']);

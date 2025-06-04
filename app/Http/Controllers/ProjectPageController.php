@@ -25,6 +25,9 @@ class ProjectPageController extends Controller
     {
         $project = Project::with('category')->where('slug', $slug)->first();
 
+         if (!$project) {
+            abort(404); 
+        }
      
         return view('frontend.pages.projects.show', [
             'project' => $project

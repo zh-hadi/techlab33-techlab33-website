@@ -5,6 +5,18 @@
     <h2>Edit Setting</h2>
     <hr>
 
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <strong>There were some problems with your input:</strong>
+            <ul class="mb-0 mt-2">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+
     <form action="{{ route('settings.update', $setting->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
@@ -92,7 +104,15 @@
         <div class="form-group row">
             <label for="facebook_link" class="col-sm-2 col-form-label">Facebook</label>
             <div class="col-sm-10">
-                <input type="url" name="facebook_link" class="form-control" id="facebook_link" value="{{ old('facebook_link', $setting->facebook_link) }}">
+                <input type="text" name="facebook_link" class="form-control" id="facebook_link" value="{{ old('facebook_link', $setting->facebook_link) }}">
+            </div>
+        </div>
+
+         {{-- Facebook Link --}}
+        <div class="form-group row">
+            <label for="youtube_link" class="col-sm-2 col-form-label">Youtube</label>
+            <div class="col-sm-10">
+                <input type="text" name="youtube_link" class="form-control" id="youtube_link" value="{{ old('youtube_link', $setting->youtube_link) }}">
             </div>
         </div>
 
@@ -100,7 +120,7 @@
         <div class="form-group row">
             <label for="linkedin_link" class="col-sm-2 col-form-label">LinkedIn</label>
             <div class="col-sm-10">
-                <input type="url" name="linkedin_link" class="form-control" id="linkedin_link" value="{{ old('linkedin_link', $setting->linkedin_link) }}">
+                <input type="text" name="linkedin_link" class="form-control" id="linkedin_link" value="{{ old('linkedin_link', $setting->linkedin_link) }}">
             </div>
         </div>
 
@@ -108,7 +128,7 @@
         <div class="form-group row">
             <label for="x_link" class="col-sm-2 col-form-label">X (Twitter)</label>
             <div class="col-sm-10">
-                <input type="url" name="x_link" class="form-control" id="x_link" value="{{ old('x_link', $setting->x_link) }}">
+                <input type="text" name="x_link" class="form-control" id="x_link" value="{{ old('x_link', $setting->x_link) }}">
             </div>
         </div>
 
@@ -116,7 +136,7 @@
         <div class="form-group row">
             <label for="instagram_link" class="col-sm-2 col-form-label">Instagram</label>
             <div class="col-sm-10">
-                <input type="url" name="instagram_link" class="form-control" id="instagram_link" value="{{ old('instagram_link', $setting->instagram_link) }}">
+                <input type="text" name="instagram_link" class="form-control" id="instagram_link" value="{{ old('instagram_link', $setting->instagram_link) }}">
             </div>
         </div>
 

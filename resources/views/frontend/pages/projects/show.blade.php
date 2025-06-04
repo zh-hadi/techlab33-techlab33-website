@@ -1,6 +1,6 @@
 @extends('frontend.layouts.main')
 
-@section('title', $project->name . ' | Projects | TechLab33 Ltd')
+@section('title', $project->name ?? '' . ' | Projects | TechLab33 Ltd')
 
 @section('content')
 
@@ -9,10 +9,10 @@
     <div class="page-title dark-background">
       <div class="container position-relative">
         <h1>Project Details</h1>
-        <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam molestias.</p>
+        <p>Delivering excellence through innovative solutions, Techlab33 Ltd’s projects showcase our commitment to quality, precision, and impactful results. Each project reflects our dedication to driving technological advancement and creating lasting value for our clients.</p>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="{{  route('projectspage.index') }}">Home</a></li>
+            <li><a href="{{  route('projectspage.index') }}">Projects</a></li>
             <li class="current">{{ $project->name }}</li>
           </ol>
         </nav>

@@ -24,6 +24,7 @@ class Setting extends Model
         'linkedin_link',
         'x_link',
         'instagram_link',
+        'youtube_link',
         'google_map_location',
     ];
 }

@@ -190,7 +190,7 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Features</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <p>Delivers smart, scalable, and secure solutions tailored to your needs.</p>
       </div><!-- End Section Title -->
 
       <div class="container">
@@ -199,7 +199,7 @@
         @foreach ($features as $index => $feature)
           <div class="row gy-4 align-items-center features-item">
             <div class="col-md-5 d-flex align-items-center {{ $index % 2 == 0 ? 'order-1' : '' }}" data-aos="zoom-out" data-aos-delay="100">
-              <img src="assets/img/features-1.svg" class="img-fluid" alt="">
+              <img src="{{  asset('storage/'.$feature->image) }}" class="img-fluid" alt="">
             </div>
             <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
               <h3>{{ $feature->title }}</h3>

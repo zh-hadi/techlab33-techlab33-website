@@ -9,10 +9,12 @@
     <div class="page-title dark-background">
       <div class="container position-relative">
         <h1>Blog Details</h1>
-        <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam molestias.</p>
+        <p style="font-size: 18px;">Stay updated with the latest trends, insights, and innovations in technology, business, and digital solutions. At Techlab33 Ltd, our blog is a hub of knowledge where we share industry news, expert opinions, technical tutorials, and success stories that inspire and inform.
+
+Whether you're a tech enthusiast, business leader, or curious learner — our content is designed to add value and spark new ideas. Explore how smart technology and ethical innovation drive progress in today’s digital world.</p>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="{{ route('blogs.index') }}">Blogs</a></li>
             <li class="current">Blog Details</li>
           </ol>
         </nav>
@@ -258,14 +260,14 @@
                 <img src="assets/img/blog/blog-author.jpg" class="rounded-circle flex-shrink-0" alt="">
                 <h4>{{ $post->user->name }}</h4>
                 <div class="social-links">
-                  <a href="https://x.com/#"><i class="bi bi-twitter-x"></i></a>
-                  <a href="https://facebook.com/#"><i class="bi bi-facebook"></i></a>
-                  <a href="https://instagram.com/#"><i class="biu bi-instagram"></i></a>
-                  <a href="https://instagram.com/#"><i class="biu bi-linkedin"></i></a>
+                  <a href="{{ $settings->x_link }}"><i class="bi bi-twitter-x"></i></a>
+                  <a href="{{ $settings->facebook_link }}"><i class="bi bi-facebook"></i></a>
+                  <a href="{{ $settings->instagram_link }}"><i class="biu bi-instagram"></i></a>
+                  <a href="{{ $settings->linkedin_link }}"><i class="biu bi-linkedin"></i></a>
                 </div>
 
                 <p>
-                  Itaque quidem optio quia voluptatibus dolorem dolor. Modi eum sed possimus accusantium. Quas repellat voluptatem officia numquam sint aspernatur voluptas. Esse et accusantium ut unde voluptas.
+                  Explore fresh ideas, tech trends, and practical insights. Our blog shares useful tips, updates, and stories to help you stay informed and inspired in the ever-evolving digital world.
                 </p>
 
               </div>

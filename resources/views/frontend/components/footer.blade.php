@@ -36,14 +36,19 @@
           </div>
         </div>
 
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
+        <div class="col-lg-3 col-md-3 footer-links">
+          {{-- <h4>Useful Links</h4>
           <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
-          </ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="{{ route('home.page') }}">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="{{ route('about.page') }}">About us</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="{{ route('servicespage.index') }}">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="{{ route('projectspage.index') }}">Projects</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="{{ route('blogs.index') }}">Blogs</a></li>
+          </ul> --}}
+          <h4>Memeber of Basis</h4>
+          <div style="">
+           <img class="logo-image" src="{{ asset('assets/frontend/img/basis-logo.svg') }}" alt="Basis Logo">
+          </div>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
@@ -58,14 +63,15 @@
           </ul>
         </div>
 
-        <div class="col-lg-4 col-md-12">
+        <div class="col-lg-3 col-md-12">
           <h4>Follow Us</h4>
-          <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+          <p>Stay connected with Techlab33 Ltd for updates, insights, and innovation in action. Join our community online and see how we’re shaping the future—one solution at a time.</p>
           <div class="social-links d-flex">
             <a target="_blank" href="{{ $settings->x_link }}"><i class="bi bi-twitter-x"></i></a>
             <a target="_blank" href="{{ $settings->facebook_link }}"><i class="bi bi-facebook"></i></a>
             <a target="_blank" href="{{ $settings->instagram_link }}"><i class="bi bi-instagram"></i></a>
             <a target="_blank" href="{{ $settings->linkedin_link }}"><i class="bi bi-linkedin"></i></a>
+            <a target="_blank" href="{{ $settings->youtube_link }}"><i class="bi bi-youtube"></i></a>
           </div>
         </div>
 

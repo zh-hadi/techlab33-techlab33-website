@@ -41,6 +41,7 @@ class SettingController extends Controller
             'facebook_link' => 'nullable|url',
             'linkedin_link' => 'nullable|url',
             'x_link' => 'nullable|url',
+            'youtube_link' => 'nullable|url',
             'instagram_link' => 'nullable|url',
             'google_map_location' => 'nullable|string',
         ]);
