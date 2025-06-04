@@ -13,7 +13,7 @@ class HomePageController extends Controller
 {
     public function index()
     {
-        $title = "Tech Lab33 Limited - Complete IT Solution";
+        $title = "Tech Lab33 Limited - Our Innovation Your Advantage";
         return view('frontend.pages.home', [
             'title' => $title,
             'blogs' => Post::take(3)->get(),
