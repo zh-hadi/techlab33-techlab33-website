@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Mail\ContactMail;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreContactRequest;
 use App\Models\Contact;
+
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -34,6 +37,12 @@ class ContactController extends Controller
 
 
         $contact = Contact::create($attributes);
+
+        
+         // Send email
+         Mail::to('info@techlab33.com')->send(new ContactMail($attributes)); // or $contact->toArray()
+
+
 
         if ($request->ajax()) {
             return response('OK', 200);
