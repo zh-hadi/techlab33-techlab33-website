@@ -45,6 +45,7 @@ class BlogPageController extends Controller
         $recent_poste = Post::latest()->take(5)->get();
         $tags = Tag::all();
 
+        /** @phpstan-ignore-next-line */
         if (! $post) {
             abort(404);
         }

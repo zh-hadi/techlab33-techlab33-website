@@ -18,7 +18,6 @@ class ContactController extends Controller
         return view('backend.pages.contact.index', [
             'contacts' => $contacts,
         ]);
-        abort(404);
     }
 
     /**

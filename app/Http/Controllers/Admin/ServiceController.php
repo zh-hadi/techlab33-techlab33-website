@@ -40,7 +40,8 @@ class ServiceController extends Controller
             'image' => 'required|image|mimes:jpg,jpeg,png,webp',
         ]);
 
-        if ($request->hasFile('image')) {
+        $path = null;
+        if ($request->hasFile('image')){
             $path = $this->fileService->upload('services/images/', $request->image);
         }
 
@@ -50,7 +51,7 @@ class ServiceController extends Controller
             'description' => $request->description,
             'content' => $request->content,
             'icon' => $request->icon,
-            'image' => $path ? $path : null,
+            'image' => $path ,
         ]);
 
         return redirect()->route('services.index')->with('success', 'Service Category added successfully.');
