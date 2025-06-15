@@ -21,7 +21,7 @@ class ContactFactory extends Factory
             'email' => fake()->email(),
             'subject' => fake()->sentence(),
             'message' => fake()->paragraph(6),
-            'status' => fake()->randomElement(['replied', 'not_replied'])
+            'status' => fake()->randomElement(['replied', 'not_replied']),
         ];
     }
 }

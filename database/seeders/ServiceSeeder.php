@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Service;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 
@@ -14,7 +13,7 @@ class ServiceSeeder extends Seeder
      */
     public function run(): void
     {
-       $data = [
+        $data = [
             [
                 'name' => 'Web Development',
                 'description' => 'We build fast, responsive websites tailored to your business needs using modern, scalable, and secure web technologies.',
@@ -37,14 +36,12 @@ class ServiceSeeder extends Seeder
             ],
         ];
 
-
-
-        foreach($data as $item){
+        foreach ($data as $item) {
             Service::factory()->create([
                 'name' => $item['name'],
                 'slug' => Str::slug($item['name']),
                 'description' => $item['description'],
-                'icon' => $item['icon']
+                'icon' => $item['icon'],
             ]);
         }
 

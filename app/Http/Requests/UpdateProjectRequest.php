@@ -23,13 +23,13 @@ class UpdateProjectRequest extends FormRequest
     {
         return [
             'project_category_id' => ['nullable', 'exists:project_categories,id'],
-            'name'          => 'nullable|string|max:255',
-            'description'   => 'nullable|string',
-            'client'        => 'nullable|string|max:255',
-            'publish_date'  => 'nullable|date',
-            'url'           => 'nullable|url|max:255',
-            'images'        => 'nullable|array',
-            'images.*'      => 'image|mimes:jpeg,png,jpg,gif,webp',
+            'name' => 'nullable|string|max:255',
+            'description' => 'nullable|string',
+            'client' => 'nullable|string|max:255',
+            'publish_date' => 'nullable|date',
+            'url' => 'nullable|url|max:255',
+            'images' => 'nullable|array',
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif,webp',
         ];
     }
 }

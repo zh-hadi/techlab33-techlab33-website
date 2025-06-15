@@ -15,6 +15,7 @@ class ProjectCategoryController extends Controller
     public function index()
     {
         $categories = ProjectCategory::latest()->get();
+
         return view('backend.pages.project.category.index', [
             'categories' => $categories,
         ]);
@@ -27,19 +28,17 @@ class ProjectCategoryController extends Controller
     {
         $attributes = $request->validate([
             'name' => ['required', 'string'],
-            'slug' => ['nullable', 'string']
+            'slug' => ['nullable', 'string'],
         ]);
 
-        if(!$request->slug){
+        if (! $request->slug) {
             $attributes['slug'] = Str::slug($attributes['name']);
         }
 
-       ProjectCategory::create($attributes);
+        ProjectCategory::create($attributes);
 
-       return redirect()->back()->with('success', 'Category created successfully!');
+        return redirect()->back()->with('success', 'Category created successfully!');
     }
-
-    
 
     /**
      * Update the specified resource in storage.
@@ -48,16 +47,16 @@ class ProjectCategoryController extends Controller
     {
         $attributes = $request->validate([
             'name' => ['nullable', 'string'],
-            'slug' => ['nullable', 'string']
+            'slug' => ['nullable', 'string'],
         ]);
 
-        if(!$request->slug){
+        if (! $request->slug) {
             $attributes['slug'] = Str::slug($attributes['name']);
         }
 
-       $porject_category->update($attributes);
+        $porject_category->update($attributes);
 
-       return redirect()->back()->with('success', 'Category update successfully!');
+        return redirect()->back()->with('success', 'Category update successfully!');
     }
 
     /**

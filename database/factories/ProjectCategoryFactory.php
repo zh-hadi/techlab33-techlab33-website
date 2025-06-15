@@ -18,7 +18,7 @@ class ProjectCategoryFactory extends Factory
     {
         return [
             'name' => fake()->word(),
-            'slug' => fake()->slug()
+            'slug' => fake()->slug(),
         ];
     }
 }

@@ -10,11 +10,9 @@ class Image extends Model
     /** @use HasFactory<\Database\Factories\ImageFactory> */
     use HasFactory;
 
-
     protected $fillable = [
         'image_path',
         'imageable_id',
         'imageable_type',
     ];
-
 }

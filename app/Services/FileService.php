@@ -9,8 +9,9 @@ class FileService
     public function upload($path, $file)
     {
         $filename = $file->hashName();
-        Storage::disk('public')->put($path . $filename, file_get_contents($file));
-        return $path . $filename;
+        Storage::disk('public')->put($path.$filename, file_get_contents($file));
+
+        return $path.$filename;
     }
 
     public function delete($path)

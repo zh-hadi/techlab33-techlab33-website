@@ -18,10 +18,10 @@ class TestimonialFactory extends Factory
     {
         return [
             'name' => fake()->name,
-            'profession' => "Freelancer",
+            'profession' => 'Freelancer',
             'image' => 'public/fake/profile1.jpg',
             'comment' => fake()->paragraph(6),
-            'rating' => fake()->randomElement([4,5])
+            'rating' => fake()->randomElement([4, 5]),
         ];
     }
 }

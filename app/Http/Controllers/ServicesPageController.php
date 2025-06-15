@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Service;
-use Illuminate\Http\Request;
 
 class ServicesPageController extends Controller
 {
     public function index()
     {
         $title = 'Our Services | TechLab33 Ltd';
+
         return view('frontend.pages.services.index', [
             'title' => $title,
             'service_categories' => Service::where('status', true)->get(),
@@ -21,8 +21,8 @@ class ServicesPageController extends Controller
     {
         $service = Service::where('slug', $slug)->first();
 
-         if (!$service) {
-            abort(404); 
+        if (! $service) {
+            abort(404);
         }
 
         // return $service;

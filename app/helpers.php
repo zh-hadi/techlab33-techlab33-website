@@ -4,9 +4,8 @@ use App\Models\Setting;
 
 function image($path)
 {
-    return asset('storage/'. $path);
+    return asset('storage/'.$path);
 }
-
 
 function settingsData($key = null, $default = null)
 {

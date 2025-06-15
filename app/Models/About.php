@@ -20,6 +20,6 @@ class About extends Model
         'hoursofsupport',
         'workers',
         'skill_title',
-        'testimonial_title'
+        'testimonial_title',
     ];
 }

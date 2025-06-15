@@ -18,7 +18,7 @@ class AboutFactory extends Factory
     {
         return [
             'title' => ' Software Company in Bangladesh-Tech Lab 33 Ltd.',
-            'content' => "<p><strong>Techlab33 Ltd</strong> is a dynamic technology-driven company committed to building innovative, secure, and scalable digital solutions. From web and software development to digital transformation consulting, we combine creativity with cutting-edge technology to help businesses grow and thrive in the digital age.</p>
+            'content' => '<p><strong>Techlab33 Ltd</strong> is a dynamic technology-driven company committed to building innovative, secure, and scalable digital solutions. From web and software development to digital transformation consulting, we combine creativity with cutting-edge technology to help businesses grow and thrive in the digital age.</p>
 
 <h4>🔑 <strong>Key Points:</strong></h4>
 
@@ -60,14 +60,14 @@ class AboutFactory extends Factory
 	</li>
 </ul>
 
-<p>At <strong>Techlab33</strong>, we don&rsquo;t just deliver projects&mdash;we deliver digital value. Join hands with us and experience technology that works for you.</p>",
+<p>At <strong>Techlab33</strong>, we don&rsquo;t just deliver projects&mdash;we deliver digital value. Join hands with us and experience technology that works for you.</p>',
             'video_url' => 'https://www.youtube.com/watch?v=XO6lsayFUvQ',
             'clients' => '178',
             'projects' => '453',
             'hoursofsupport' => '1540',
             'workers' => '08',
             'skill_title' => fake()->paragraph(),
-            'testimonial_title' => fake()->paragraph()
+            'testimonial_title' => fake()->paragraph(),
         ];
     }
 }

@@ -9,16 +9,13 @@ use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
 use App\Services\FileService;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
-    public function __construct(public FileService $fileService)
-    {
-        
-    }
+    public function __construct(public FileService $fileService) {}
+
     /**
      * Display a listing of the resource.
      */
@@ -54,7 +51,7 @@ class PostController extends Controller
 
         $attributes['slug'] = Str::slug($attributes['title']);
 
-        if($request->hasFile('image')){
+        if ($request->hasFile('image')) {
             $path = $this->fileService->upload('post/image/', $request->file('image'));
             $attributes['image'] = $path;
         }
@@ -62,7 +59,6 @@ class PostController extends Controller
         $tags = $attributes['tags'];
         $category = $attributes['category_id'];
 
-        
         unset($attributes['tags']);
         unset($attributes['category_id']);
 
@@ -70,14 +66,14 @@ class PostController extends Controller
         $attributes['user_id'] = $user->id;
         $post = Post::create($attributes);
 
-        foreach($tags as $tag){
+        foreach ($tags as $tag) {
             $post->tags()->attach($tag);
         }
 
-        if(Category::find($category)){
+        if (Category::find($category)) {
             $post->categories()->attach($category);
         }
-        
+
         return redirect()->route('posts.index')->with('success', 'Tag created successfully!');
     }
 
@@ -96,7 +92,7 @@ class PostController extends Controller
     {
         return view('backend.pages.post.edit', [
             'post' => $post,
-             'tags' => Tag::latest()->get(),
+            'tags' => Tag::latest()->get(),
             'categories' => Category::latest()->get(),
         ]);
     }
@@ -113,7 +109,7 @@ class PostController extends Controller
 
         // Handle image upload if exists
         if ($request->hasFile('image')) {
-            if($post->image){
+            if ($post->image) {
                 $this->fileService->delete($post->image);
             }
             $path = $this->fileService->upload('post/image/', $request->file('image'));
@@ -141,13 +137,12 @@ class PostController extends Controller
         return redirect()->route('posts.index')->with('success', 'Post updated successfully!');
     }
 
-
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(Post $post)
     {
-        if($post->image){
+        if ($post->image) {
             $this->fileService->delete($post->image);
         }
 

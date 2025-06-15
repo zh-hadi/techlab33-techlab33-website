@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Admin\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -19,26 +19,25 @@ class LoginController extends Controller
     {
         $attributes = request()->validate([
             'email' => ['required'],
-            'password' => ['required']
+            'password' => ['required'],
         ]);
 
         $user = User::where('email', $attributes['email'])->first();
 
-        if(!$user){
+        if (! $user) {
             return back()->withErrors([
-                'email' => 'The Email is invalid'
+                'email' => 'The Email is invalid',
             ])->withInput();
         }
 
-        if(!Hash::check($attributes['password'], $user->password)){
+        if (! Hash::check($attributes['password'], $user->password)) {
             return back()->withErrors([
-                'password' => 'Incorrect password'
+                'password' => 'Incorrect password',
             ])->withInput();
         }
 
         Auth::login($user);
         $request->session()->regenerateToken();
-       
 
         return redirect()->intended('admin/settings');
     }

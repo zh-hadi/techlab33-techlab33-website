@@ -18,6 +18,6 @@ class Service extends Model
         'image',
         'icon',
         'status',
-        'active'
+        'active',
     ];
 }

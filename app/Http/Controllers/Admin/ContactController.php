@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Mail\ContactMail;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreContactRequest;
+use App\Mail\ContactMail;
 use App\Models\Contact;
-
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
@@ -15,11 +14,13 @@ class ContactController extends Controller
     public function index()
     {
         $contacts = Contact::latest()->get();
+
         return view('backend.pages.contact.index', [
-            'contacts' => $contacts
+            'contacts' => $contacts,
         ]);
         abort(404);
     }
+
     /**
      * Show the form for creating the resource.
      */
@@ -35,14 +36,10 @@ class ContactController extends Controller
     {
         $attributes = $request->validated();
 
-
         $contact = Contact::create($attributes);
 
-        
-         // Send email
-         Mail::to('info@techlab33.com')->send(new ContactMail($attributes)); // or $contact->toArray()
-
-
+        // Send email
+        Mail::to('info@techlab33.com')->send(new ContactMail($attributes)); // or $contact->toArray()
 
         if ($request->ajax()) {
             return response('OK', 200);
@@ -52,7 +49,7 @@ class ContactController extends Controller
         // }
 
         // return redirect()->back()->with('success', 'Contact form submitted successfully.');
-   
+
     }
 
     /**
@@ -61,7 +58,7 @@ class ContactController extends Controller
     public function show(Contact $contact)
     {
         return view('backend.pages.contact.show', [
-            'contact' => $contact
+            'contact' => $contact,
         ]);
     }
 

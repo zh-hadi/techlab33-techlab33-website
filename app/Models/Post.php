@@ -16,9 +16,8 @@ class Post extends Model
         'slug',
         'image',
         'content',
-        'user_id '
+        'user_id ',
     ];
-
 
     public function tags()
     {
@@ -30,7 +29,7 @@ class Post extends Model
         return $this->belongsToMany(Category::class, 'post_category');
     }
 
-    public function user():BelongsTo
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }

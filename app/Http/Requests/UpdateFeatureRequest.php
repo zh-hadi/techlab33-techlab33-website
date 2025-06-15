@@ -22,10 +22,10 @@ class UpdateFeatureRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title'   => 'required|string|max:255',
+            'title' => 'required|string|max:255',
             'content' => 'nullable|string',
-            'image'   => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
-            'status'  => 'required|in:1,0',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
+            'status' => 'required|in:1,0',
         ];
     }
 }

@@ -17,7 +17,7 @@ class ServiceFactory extends Factory
     public function definition(): array
     {
         return [
-            'content' => fake()->paragraph(10)
+            'content' => fake()->paragraph(10),
         ];
     }
 }

@@ -10,7 +10,6 @@ class Project extends Model
     /** @use HasFactory<\Database\Factories\ProjectFactory> */
     use HasFactory;
 
-
     protected $fillable = [
         'name',
         'slug',
@@ -18,15 +17,13 @@ class Project extends Model
         'client',
         'publish_date',
         'url',
-        'project_category_id'
+        'project_category_id',
     ];
-
 
     public function category()
     {
         return $this->belongsTo(ProjectCategory::class, 'project_category_id');
     }
-
 
     public function images()
     {

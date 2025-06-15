@@ -16,6 +16,6 @@ class Testimonial extends Model
         'image',
         'comment',
         'rating',
-        'status'
+        'status',
     ];
 }

@@ -17,8 +17,8 @@ class SettingFactory extends Factory
     public function definition(): array
     {
         return [
-            'website_name' => "Techlab33",
-            'website_email' => "info@techlab33.com",
+            'website_name' => 'Techlab33',
+            'website_email' => 'info@techlab33.com',
             // 'website_logo' => 'uploads/logo/logo.png',
             // 'website_favicon' => 'uploads/logo/favicon.ico',
             'address' => '27/1B , Shaymoli

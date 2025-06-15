@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\About;
 use App\Models\BusinessPartner;
 use App\Models\Testimonial;
 use App\Services\FileService;
+use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
-    public function __construct(protected  FileService $fileServices){}
+    public function __construct(protected FileService $fileServices) {}
+
     public function index()
     {
         // return About::first();
@@ -24,7 +25,7 @@ class AboutController extends Controller
 
     public function update(Request $request, About $about)
     {
-        
+
         $attributes = $request->validate([
             'title' => 'required|string|max:255',
             'content' => 'required|string',
@@ -36,12 +37,12 @@ class AboutController extends Controller
             'workers' => 'required|integer',
             'skill_title' => 'required|string',
             'testimonial_title' => 'required|string',
-            
+
         ]);
 
         if ($request->hasFile('image')) {
-          
-            if ($about->image ) {
+
+            if ($about->image) {
                 $this->fileServices->delete($about->image);
             }
 
@@ -49,11 +50,8 @@ class AboutController extends Controller
             $attributes['image'] = $path;
         }
 
-       
-
         $about->update($attributes);
 
         return redirect()->back()->with('success', 'About info updated successfully.');
     }
-
 }

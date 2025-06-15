@@ -19,7 +19,6 @@ class CategoryController extends Controller
         ]);
     }
 
-
     /**
      * Store a newly created resource in storage.
      */
@@ -27,19 +26,17 @@ class CategoryController extends Controller
     {
         $attributes = $request->validate([
             'name' => ['required', 'string'],
-            'slug' => ['nullable', 'string']
+            'slug' => ['nullable', 'string'],
         ]);
 
-        if(!$request->slug){
+        if (! $request->slug) {
             $attributes['slug'] = Str::slug($attributes['name']);
         }
 
-       Category::create($attributes);
+        Category::create($attributes);
 
-       return redirect()->back()->with('success', 'Category created successfully!');
+        return redirect()->back()->with('success', 'Category created successfully!');
     }
-
-    
 
     /**
      * Update the specified resource in storage.
@@ -48,16 +45,16 @@ class CategoryController extends Controller
     {
         $attributes = $request->validate([
             'name' => ['nullable', 'string'],
-            'slug' => ['nullable', 'string']
+            'slug' => ['nullable', 'string'],
         ]);
 
-        if(!$request->slug){
+        if (! $request->slug) {
             $attributes['slug'] = Str::slug($attributes['name']);
         }
 
-       $category->update($attributes);
+        $category->update($attributes);
 
-       return redirect()->back()->with('success', 'Category update successfully!');
+        return redirect()->back()->with('success', 'Category update successfully!');
     }
 
     /**

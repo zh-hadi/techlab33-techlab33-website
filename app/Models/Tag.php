@@ -10,11 +10,10 @@ class Tag extends Model
     /** @use HasFactory<\Database\Factories\TagFactory> */
     use HasFactory;
 
-     protected $fillable = [
+    protected $fillable = [
         'name',
         'slug',
     ];
-
 
     public function posts()
     {

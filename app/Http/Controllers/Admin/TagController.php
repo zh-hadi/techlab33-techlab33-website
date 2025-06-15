@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Tag;
 use Illuminate\Http\Request;
-
 use Illuminate\Support\Str;
 
 class TagController extends Controller
@@ -20,7 +19,6 @@ class TagController extends Controller
         ]);
     }
 
-
     /**
      * Store a newly created resource in storage.
      */
@@ -28,19 +26,17 @@ class TagController extends Controller
     {
         $attributes = $request->validate([
             'name' => ['required', 'string'],
-            'slug' => ['nullable', 'string']
+            'slug' => ['nullable', 'string'],
         ]);
 
-        if(!$request->slug){
+        if (! $request->slug) {
             $attributes['slug'] = Str::slug($attributes['name']);
         }
 
-       Tag::create($attributes);
+        Tag::create($attributes);
 
-       return redirect()->back()->with('success', 'Tag created successfully!');
+        return redirect()->back()->with('success', 'Tag created successfully!');
     }
-
-    
 
     /**
      * Update the specified resource in storage.
@@ -49,16 +45,16 @@ class TagController extends Controller
     {
         $attributes = $request->validate([
             'name' => ['nullable', 'string'],
-            'slug' => ['nullable', 'string']
+            'slug' => ['nullable', 'string'],
         ]);
 
-        if(!$request->slug){
+        if (! $request->slug) {
             $attributes['slug'] = Str::slug($attributes['name']);
         }
 
-       $tag->update($attributes);
+        $tag->update($attributes);
 
-       return redirect()->back()->with('success', 'Tag update successfully!');
+        return redirect()->back()->with('success', 'Tag update successfully!');
     }
 
     /**

@@ -2,9 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Feature;
-use App\Models\ProjectCategory;
-use App\Models\ServiceCategory;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -23,7 +20,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Techlab33 Ltd',
             'email' => 'admin@admin.com',
             'password' => Hash::make('admin@admin.com'),
-         ]);
+        ]);
 
         $this->call([
             SettingSeeder::class,

@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\ProjectCategory;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 
@@ -19,14 +18,13 @@ class ProjectCategorySeeder extends Seeder
             'Web Design',
             'Software',
             'UI/UX Design',
-            'E-commerce'
+            'E-commerce',
         ];
 
-
-        foreach($categories as $category){
+        foreach ($categories as $category) {
             ProjectCategory::factory()->create([
                 'name' => $category,
-                'slug' => Str::slug($category)
+                'slug' => Str::slug($category),
             ]);
         }
     }

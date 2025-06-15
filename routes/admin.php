@@ -17,20 +17,17 @@ use App\Http\Controllers\Admin\SkillController;
 use App\Http\Controllers\Admin\SubscribeController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\TestimonialsController;
+use App\Mail\NewsLaterMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
-use App\Mail\NewsLaterMail;
+Route::prefix('admin/')->group(function () {
 
-
-
-Route::prefix('admin/')->group(function(){
-    
     Route::resource('login', LoginController::class)->only(['index', 'store']);
     Route::get('logout', LogoutController::class)->name('logout');
-    
-    Route::middleware(['auth'])->group(function(){
-        Route::view('/', function(){
+
+    Route::middleware(['auth'])->group(function () {
+        Route::view('/', function () {
             return redirect()->route('dashboard');
         });
 
@@ -42,13 +39,12 @@ Route::prefix('admin/')->group(function(){
         Route::resource('aboutpage/business-partners', BusinessPartnerController::class)->only(['index', 'store', 'update', 'destroy']);
         Route::resource('aboutpage/skills', SkillController::class)->only(['index', 'store', 'update', 'destroy']);
 
-
         Route::resource('blog/tags', TagController::class)->only(['index', 'store', 'update', 'destroy']);
         Route::resource('blog/categories', CategoryController::class)->only(['index', 'store', 'update', 'destroy']);
         Route::resource('blog/posts', PostController::class);
 
         Route::resource('contacts', ContactController::class)->except(['store']);
-        
+
         Route::resource('project-category', ProjectCategoryController::class);
         Route::resource('projects', ProjectController::class);
         Route::delete('/projects/image/{image}', [ProjectController::class, 'deleteImage'])->name('projects.image.delete');
@@ -61,15 +57,15 @@ Route::prefix('admin/')->group(function(){
         Route::resource('send/newslaters', NewslaterMessageController::class)->only(['index', 'store']);
     });
 
-    Route::get('/test-mail', function(){
+    Route::get('/test-mail', function () {
         // Mail::raw('This is a test email from laravel', function($message){
         //     $message->to('zhhadi50@gmail.com')
         //         ->subject('Test Mail');
         //     $message->bcc('test@techlab33.com');
         // });
-         $data = [
+        $data = [
             'name' => 'Hadiuzzaman',
-            'message' => 'Thanks for subscribing to our newsletter!'
+            'message' => 'Thanks for subscribing to our newsletter!',
         ];
 
         Mail::to('zhhadi50@gmail.com')->send(new NewsLaterMail($data));

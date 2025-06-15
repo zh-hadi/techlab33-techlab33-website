@@ -7,11 +7,11 @@ use App\Http\Requests\StoreFeatureRequest;
 use App\Http\Requests\UpdateFeatureRequest;
 use App\Models\Feature;
 use App\Services\FeatureService;
-use Illuminate\Http\Request;
 
 class FeatureController extends Controller
 {
-    public function __construct(private FeatureService $featureService){}
+    public function __construct(private FeatureService $featureService) {}
+
     /**
      * Display a listing of the resource.
      */
@@ -53,9 +53,9 @@ class FeatureController extends Controller
      */
     public function edit(Feature $feature)
     {
-         return view('backend.pages.feature.edit', [
-            'feature'  => $feature
-         ]);
+        return view('backend.pages.feature.edit', [
+            'feature' => $feature,
+        ]);
     }
 
     /**
@@ -65,7 +65,7 @@ class FeatureController extends Controller
     {
         $this->featureService->update($feature, $request->validated());
 
-         return redirect()->route('features.index')->with('success', 'Feature updated Successfully!');
+        return redirect()->route('features.index')->with('success', 'Feature updated Successfully!');
     }
 
     /**
@@ -74,7 +74,7 @@ class FeatureController extends Controller
     public function destroy(Feature $feature)
     {
 
-       $result = $this->featureService->delete($feature);
+        $result = $this->featureService->delete($feature);
 
         if ($result) {
             return redirect()->back()->with('success', 'Feature Deleted Successfully!');

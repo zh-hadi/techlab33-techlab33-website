@@ -18,7 +18,7 @@ class FeatureFactory extends Factory
     {
         return [
             'title' => fake()->sentence(),
-            'content' => fake()->paragraph(15)
+            'content' => fake()->paragraph(15),
         ];
     }
 }

@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Skill;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class SkillSeeder extends Seeder
@@ -29,10 +28,10 @@ class SkillSeeder extends Seeder
             ['name' => 'REST API', 'percentage' => 88],
         ];
 
-        foreach($skills as $skill){
+        foreach ($skills as $skill) {
             Skill::factory()->create([
                 'name' => $skill['name'],
-                'percentage' => $skill['percentage']
+                'percentage' => $skill['percentage'],
             ]);
         }
     }

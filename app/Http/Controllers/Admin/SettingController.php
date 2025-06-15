@@ -2,27 +2,25 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Setting;
 use App\Http\Controllers\Controller;
+use App\Models\Setting;
 use App\Services\FileService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Auth;
 
 class SettingController extends Controller
 {
-    public function __construct(protected  FileService $fileServices){}
+    public function __construct(protected FileService $fileServices) {}
 
     public function index()
     {
         // dd(Auth::user());
         $setting = Setting::first();
+
         return view('backend.setting.index', [
-            'setting' => $setting
+            'setting' => $setting,
         ]);
     }
-
 
     public function update(Request $request, Setting $setting)
     {
@@ -48,22 +46,21 @@ class SettingController extends Controller
 
         // Handle logo upload
         if ($request->hasFile('website_logo')) {
-            if ($setting->website_logo ) {
+            if ($setting->website_logo) {
                 $this->fileServices->delete($setting->website_logo);
             }
             $logoPath = $this->fileServices->upload('logo/', $request->file('website_logo'));
             $attributes['website_logo'] = $logoPath;
-          
+
         }
 
-     
         // Handle favicon upload
         if ($request->hasFile('website_favicon')) {
             if ($setting->website_favicon) {
                 $this->fileServices->delete($setting->website_favicon);
             }
-            $path  = $this->fileServices->upload('logo/', $request->file('website_favicon'));
-            $attributes['website_favicon'] =  $path;
+            $path = $this->fileServices->upload('logo/', $request->file('website_favicon'));
+            $attributes['website_favicon'] = $path;
         }
 
         // return $attributes;
@@ -72,5 +69,4 @@ class SettingController extends Controller
 
         return redirect()->route('settings.index')->with('success', 'Setting updated successfully.');
     }
-
 }

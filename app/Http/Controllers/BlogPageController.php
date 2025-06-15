@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
 use App\Models\Category;
+use App\Models\Post;
 use App\Models\Tag;
-use Illuminate\Http\Request;
 
 class BlogPageController extends Controller
 {
@@ -17,7 +16,6 @@ class BlogPageController extends Controller
         $tagSlug = request()->tag;
         $tag = $tagSlug ? Tag::where('slug', $tagSlug)->first() : null;
 
-
         $query = Post::with(['user', 'categories', 'tags']);
 
         if ($category) {
@@ -26,21 +24,19 @@ class BlogPageController extends Controller
             });
         }
 
-        if($tag){
-            $query->whereHas('tags', function($q) use($tag){
+        if ($tag) {
+            $query->whereHas('tags', function ($q) use ($tag) {
                 $q->where('tags.id', $tag->id);
             });
         }
 
         $blogs = $query->latest()->paginate(6);
 
-
         return view('frontend.pages.blog.index', [
             'title' => 'Our Blog | TechLab33 Ltd',
-            'blogs' => $blogs
+            'blogs' => $blogs,
         ]);
     }
-
 
     public function show($slug)
     {
@@ -49,16 +45,16 @@ class BlogPageController extends Controller
         $recent_poste = Post::latest()->take(5)->get();
         $tags = Tag::all();
 
-         if (!$post) {
-            abort(404);  
+        if (! $post) {
+            abort(404);
         }
-        
+
         // return $recentPoste;
         return view('frontend.pages.blog.show', [
             'post' => $post,
             'categories' => $categories,
             'recent_posts' => $recent_poste,
-            'tags' => $tags
+            'tags' => $tags,
         ]);
     }
 }

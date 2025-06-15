@@ -2,10 +2,10 @@
 
 namespace App\Providers;
 
-use App\Models\Setting;
 use App\Models\Service;
-use Illuminate\Support\ServiceProvider;
+use App\Models\Setting;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\ServiceProvider;
 
 class ViewServiceProvider extends ServiceProvider
 {
@@ -22,7 +22,7 @@ class ViewServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        View::composer("*", function ($view) {
+        View::composer('*', function ($view) {
             $settings = Setting::first();
 
             // Get all services (only name and slug)

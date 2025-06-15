@@ -4,22 +4,17 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProjectRequest;
-use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Image;
 use App\Models\Project;
 use App\Models\ProjectCategory;
 use App\Services\FileService;
-use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 
 class ProjectController extends Controller
 {
+    public function __construct(protected FileService $fileService) {}
 
-    public function __construct(protected FileService $fileService )
-    {
-        
-    }
     /**
      * Display a listing of the resource.
      */
@@ -29,7 +24,7 @@ class ProjectController extends Controller
 
         // return $projects;
         return view('backend.pages.project.index', [
-            'projects' => $projects
+            'projects' => $projects,
         ]);
     }
 
@@ -39,8 +34,9 @@ class ProjectController extends Controller
     public function create()
     {
         $categories = ProjectCategory::all();
-        return view('backend.pages.project.create',[
-            'categories' => $categories
+
+        return view('backend.pages.project.create', [
+            'categories' => $categories,
         ]);
     }
 
@@ -54,8 +50,8 @@ class ProjectController extends Controller
 
         $project = Project::create(Arr::except($attributes, 'images'));
 
-        if($request->hasFile('images')){
-            foreach($request->file('images') as $file){
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $file) {
                 $path = $this->fileService->upload('project/images/', $file);
                 $project->images()->create(['image_path' => $path]);
             }
@@ -73,7 +69,7 @@ class ProjectController extends Controller
 
         // return $project;
         return view('backend.pages.project.show', [
-            'project' => $project
+            'project' => $project,
         ]);
     }
 
@@ -83,9 +79,10 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         $categories = ProjectCategory::all();
-         return view('backend.pages.project.edit',[
+
+        return view('backend.pages.project.edit', [
             'categories' => $categories,
-            'project' => $project
+            'project' => $project,
         ]);
     }
 
@@ -94,7 +91,7 @@ class ProjectController extends Controller
      */
     public function update(StoreProjectRequest $request, Project $project)
     {
- 
+
         $attributes = $request->validated();
         $attributes['slug'] = Str::slug($attributes['name']);
 
@@ -115,7 +112,7 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        foreach($project->images as $image){
+        foreach ($project->images as $image) {
             $this->fileService->delete($image);
 
             $image->delete();
@@ -126,13 +123,12 @@ class ProjectController extends Controller
         return redirect()->route('projects.index')->with('success', 'Project and associated images deleted successfully.');
     }
 
-
     public function deleteImage(Image $image)
     {
-            $this->fileService->delete($image->image_path);
+        $this->fileService->delete($image->image_path);
 
-            $image->delete();
+        $image->delete();
 
-            return back()->with('success', 'Image deleted successfully!');
+        return back()->with('success', 'Image deleted successfully!');
     }
 }

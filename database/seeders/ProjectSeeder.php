@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Project;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class ProjectSeeder extends Seeder
@@ -13,9 +12,9 @@ class ProjectSeeder extends Seeder
      */
     public function run(): void
     {
-        Project::factory(10)->state(function(){
+        Project::factory(10)->state(function () {
             return [
-                'project_category_id' => rand(1, 5)
+                'project_category_id' => rand(1, 5),
             ];
         })->create();
     }

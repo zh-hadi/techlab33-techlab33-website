@@ -21,15 +21,15 @@ class StoreProjectRequest extends FormRequest
      */
     public function rules(): array
     {
-         return [
+        return [
             'project_category_id' => ['nullable', 'exists:project_categories,id'],
-            'name'          => 'required|string|max:255',
-            'description'   => 'nullable|string',
-            'client'        => 'required|string|max:255',
-            'publish_date'  => 'nullable|date',
-            'url'           => 'nullable|url|max:255',
-            'images'        => 'nullable|array',
-            'images.*'      => 'image|mimes:jpeg,png,jpg,gif,webp',
+            'name' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'client' => 'required|string|max:255',
+            'publish_date' => 'nullable|date',
+            'url' => 'nullable|url|max:255',
+            'images' => 'nullable|array',
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif,webp',
         ];
     }
 }

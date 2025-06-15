@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\BusinessPartner;
-use Illuminate\Http\Request;
 use App\Services\FileService;
+use Illuminate\Http\Request;
 
 class BusinessPartnerController extends Controller
 {
@@ -14,9 +14,10 @@ class BusinessPartnerController extends Controller
     public function index()
     {
         return view('backend.pages.business_partner.index', [
-            'businessPartners' => BusinessPartner::latest()->get()
+            'businessPartners' => BusinessPartner::latest()->get(),
         ]);
     }
+
     public function store(Request $request)
     {
         $attributes = $request->validate([
@@ -37,7 +38,7 @@ class BusinessPartnerController extends Controller
 
     public function update(Request $request, BusinessPartner $business_partner)
     {
-         $attributes = $request->validate([
+        $attributes = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'logo' => ['nullable', 'image', 'mimes:jpeg,png,jpg,svg'],
             'status' => ['required', 'in:active,inactive'],
