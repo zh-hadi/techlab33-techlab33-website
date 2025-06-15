@@ -10,7 +10,7 @@
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="{{ image($settings->website_favicon) }}" rel="icon">
+  <link href="{{ image($settings?->website_favicon ? $settings?->website_favicon : '') }}" rel="icon">
   {{-- <link href="{{ asset('') }}" rel="apple-touch-icon"> --}}
 
   <!-- Fonts -->

@@ -4,7 +4,7 @@
 
       <a href="/" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img style="max-height: 80px !important;" src="{{ image($settings->website_logo) }}" alt="">
+        <img style="max-height: 80px !important;" src="{{ image($settings?->website_logo ? $settings?->website_logo : '') }}" alt="">
         {{-- <h1 class="sitename">Moderna</h1> --}}
       </a>
 

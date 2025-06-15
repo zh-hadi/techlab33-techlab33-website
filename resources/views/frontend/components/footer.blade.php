@@ -24,15 +24,15 @@
         <div class="col-lg-4 col-md-6 footer-about">
           <a href="/" class="d-flex align-items-center">
             {{-- <span class="sitename">{{ $settings->website_name }}</span> --}}
-             <img style="height: 80px !important;" src="{{ image($settings->website_logo) }}" alt="">
+             <img style="height: 80px !important;" src="{{ image($settings?->website_logo ? $settings?->website_logo : '') }}" alt="website-logo">
           </a>
           <div class="footer-contact pt-3">
             
-            <p class="col-lg-5">{{ $settings->address }}</p>
+            <p class="col-lg-5">{{ $settings->address ?? '' }}</p>
             {{-- <p>New York, NY 535022</p> --}}
-            <p class="mt-3"><strong>Telephone:</strong> <span>{{ $settings->telephone }}</span></p>
-            <p class="mt-3"><strong>Phone:</strong> <span>{{ $settings->phone }}</span></p>
-            <p><strong>Email:</strong> <span>{{ $settings->website_email }}</span></p>
+            <p class="mt-3"><strong>Telephone:</strong> <span>{{ $settings->telephone ?? '' }}</span></p>
+            <p class="mt-3"><strong>Phone:</strong> <span>{{ $settings->phone ?? '' }}</span></p>
+            <p><strong>Email:</strong> <span>{{ $settings->website_email ?? '' }}</span></p>
           </div>
         </div>
 
@@ -67,11 +67,11 @@
           <h4>Follow Us</h4>
           <p>Stay connected with Techlab33 Ltd for updates, insights, and innovation in action. Join our community online and see how we’re shaping the future—one solution at a time.</p>
           <div class="social-links d-flex">
-            <a target="_blank" href="{{ $settings->x_link }}"><i class="bi bi-twitter-x"></i></a>
-            <a target="_blank" href="{{ $settings->facebook_link }}"><i class="bi bi-facebook"></i></a>
-            <a target="_blank" href="{{ $settings->instagram_link }}"><i class="bi bi-instagram"></i></a>
-            <a target="_blank" href="{{ $settings->linkedin_link }}"><i class="bi bi-linkedin"></i></a>
-            <a target="_blank" href="{{ $settings->youtube_link }}"><i class="bi bi-youtube"></i></a>
+            <a target="_blank" href="{{ $settings?->x_link ?? '' }}"><i class="bi bi-twitter-x"></i></a>
+            <a target="_blank" href="{{ $settings?->facebook_link ?? '' }}"><i class="bi bi-facebook"></i></a>
+            <a target="_blank" href="{{ $settings?->instagram_link ?? '' }}"><i class="bi bi-instagram"></i></a>
+            <a target="_blank" href="{{ $settings?->linkedin_link ?? '' }}"><i class="bi bi-linkedin"></i></a>
+            <a target="_blank" href="{{ $settings?->youtube_link ?? '' }}"><i class="bi bi-youtube"></i></a>
           </div>
         </div>
 
