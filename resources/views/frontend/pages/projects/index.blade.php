@@ -51,7 +51,7 @@
                       <h4>{{ $project->category->name }}</h4>
                       <p>{{ $project->name }}</p>
                       {{-- <a href="" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a> --}}
-                      <a href="{{  route('projectspage.show', ['slug' => $project->slug ]) }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                      <a href="{{  route('projectspage.show', $project) }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                       </div>
                   </div>
                 </div><!-- End Portfolio Item -->

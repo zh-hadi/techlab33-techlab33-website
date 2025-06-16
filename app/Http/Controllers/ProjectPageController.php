@@ -20,9 +20,9 @@ class ProjectPageController extends Controller
         ]);
     }
 
-    public function show($slug)
+    public function show(Project $project)
     {
-        $project = Project::with('category')->where('slug', $slug)->first();
+        $project->load('category');
 
         if (! $project) {
             abort(404);

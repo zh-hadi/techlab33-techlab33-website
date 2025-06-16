@@ -32,15 +32,18 @@ class BlogPageController extends Controller
 
         $blogs = $query->latest()->paginate(6);
 
+        // return $blogs;
+
         return view('frontend.pages.blog.index', [
             'title' => 'Our Blog | TechLab33 Ltd',
             'blogs' => $blogs,
         ]);
     }
 
-    public function show($slug)
+    public function show(Post $post)
     {
-        $post = Post::with(['user', 'categories', 'tags'])->where('slug', $slug)->firstOrFail();
+        // return $post;
+        // $post = Post::with(['user', 'categories', 'tags'])->where('slug', $slug)->firstOrFail();
         $categories = Category::withCount('posts')->orderBy('posts_count', 'desc')->get();
         $recent_poste = Post::latest()->take(5)->get();
         $tags = Tag::all();

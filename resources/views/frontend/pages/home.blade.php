@@ -25,7 +25,7 @@
                 <div>
                   <p>{{ Str::limit(strip_tags($blog->content), 200) }}</p>
                 </div>
-                <a href="{{  route('blogs.show', ['slug' => $blog->slug ]) }}" class="btn-get-started">Read More</a>
+                <a href="{{  route('blogs.show', $blog ) }}" class="btn-get-started">Read More</a>
               </div>
             </div><!-- End Carousel Item -->
           @endforeach

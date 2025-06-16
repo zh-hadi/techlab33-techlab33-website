@@ -36,16 +36,16 @@ Whether you're a tech enthusiast, business leader, or curious learner — our co
                   <img src="{{  image($blog->image) }}" alt="" class="img-fluid">
                 </div>
 
-                <p class="post-category">{{ $blog->categories[0]->name }}</p>
+                {{-- <p class="post-category">{{ $blog?->categories[0]?->name }}</p> --}}
 
                 <h2 class="title">
-                  <a href="{{  route('blogs.show', ['slug' => $blog->slug ]) }}">{{ $blog->title }}</a>
+                  <a href="{{  route('blogs.show', $blog) }}">{{ $blog->title }}</a>
                 </h2>
 
                 <div class="d-flex align-items-center">
                   <img src="assets/img/blog/blog-author.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
                   <div class="post-meta">
-                    <p class="post-author">{{ $blog->user->name }}</p>
+                    <p class="post-author">{{ $blog?->user?->name }}</p>
                     <p class="post-date">
                       <time datetime="2022-01-01">{{ $blog->created_at->format('M j, Y') }}</time>
                     </p>
