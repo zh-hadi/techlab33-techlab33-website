@@ -53,6 +53,7 @@ class BlogPageController extends Controller
             abort(404);
         }
 
+        // return $post;
         // return $recentPoste;
         return view('frontend.pages.blog.show', [
             'post' => $post,
