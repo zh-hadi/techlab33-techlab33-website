@@ -1,0 +1,3 @@
+Post::with('tags')->get();
+Post::first();
+Post::first();
