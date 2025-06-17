@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\FeatureController;
 use App\Http\Controllers\Admin\NewslaterMessageController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\ProjectCategoryController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\ServiceController;
@@ -32,6 +33,12 @@ Route::prefix('admin/')->group(function () {
         });
 
         Route::view('/dashboard', 'backend.pages.dashboard')->name('dashboard');
+
+        Route::resource('profile', ProfileController::class);
+
+        Route::get('session', function () {
+            return session()->all();
+        });
 
         Route::resource('settings', SettingController::class)->only(['index', 'update']);
         Route::resource('aboutpage/abouts', AboutController::class)->only(['index', 'update']);

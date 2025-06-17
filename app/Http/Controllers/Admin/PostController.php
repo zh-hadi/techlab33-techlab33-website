@@ -14,7 +14,7 @@ use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
-    public function __construct(public FileService $fileService) {}
+    public function __construct(protected FileService $fileService) {}
 
     /**
      * Display a listing of the resource.
