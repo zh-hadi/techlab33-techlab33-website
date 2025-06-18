@@ -7,6 +7,7 @@ use App\Http\Requests\StoreContactRequest;
 use App\Mail\ContactMail;
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
@@ -33,6 +34,20 @@ class ContactController extends Controller
      */
     public function store(StoreContactRequest $request)
     {
+        // request()->validate([
+        //     'g-recaptcha-response' => 'required',
+        // ]);
+
+        $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
+            'secret' => config('services.recaptcha.secret_key'),
+            'response' => request()->input('g-recaptcha-response'),
+            'remoteip' => request()->ip(),
+        ]);
+
+        if (! $response->json('success')) {
+            return 'reCAPTCHA failed. Are you a robot?';
+        }
+
         $attributes = $request->validated();
 
         $contact = Contact::create($attributes);
