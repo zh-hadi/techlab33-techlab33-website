@@ -33,7 +33,7 @@ Whether you're a tech enthusiast, business leader, or curious learner — our co
               <article class="article">
 
                 <div class="post-img">
-                  <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+                  <!--<img src="{{ image( auth()->user()->image ) }}" alt="" class="img-fluid">-->
                 </div>
 
                 <h2 class="title">{{ $post->title }}</h2>
