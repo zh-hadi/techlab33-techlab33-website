@@ -4,11 +4,11 @@
 
 <div>
     <div class="p-2 text-center font-weight-bolder" style="background-color: #4e73df">
-        <div class="text-white">Business Partners Manage</div>
+        <div class="text-white">Client List Manage</div>
     </div>
 
     <div class="p-4 bg-white">
-        <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#business_partner_modal">Add Business Partner</button>
+        <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#business_partner_modal">Add Client</button>
 
         <div class="table-responsive">
             <table class="table table-bordered" id="business_partner_dataTable" width="100%" cellspacing="0">
@@ -53,7 +53,7 @@
                     <form action="{{ route('business-partners.update', $partner->id) }}" method="POST" enctype="multipart/form-data" class="modal-content">
                         @csrf @method('PUT')
                         <div class="modal-header">
-                            <h5 class="modal-title">Edit Business Partner</h5>
+                            <h5 class="modal-title">Edit Client</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
                         </div>
                         <div class="modal-body row">
@@ -76,7 +76,7 @@
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
                         </div>
                         <div class="modal-body">
-                            Are you sure you want to delete this partner?
+                            Are you sure you want to delete this client?
                         </div>
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-danger">Yes, Delete</button>
@@ -103,7 +103,7 @@
             <form action="{{ route('business-partners.store') }}" method="POST" enctype="multipart/form-data" class="modal-content">
                 @csrf
                 <div class="modal-header">
-                    <h5 class="modal-title">Add New Business Partner</h5>
+                    <h5 class="modal-title">Add New Client </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
                 </div>
                 <div class="modal-body row">
