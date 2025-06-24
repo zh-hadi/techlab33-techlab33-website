@@ -6,6 +6,7 @@ use App\Models\About;
 use App\Models\Feature;
 use App\Models\Post;
 use App\Models\Service;
+use App\Models\Testimonial;
 
 class HomePageController extends Controller
 {
@@ -19,6 +20,7 @@ class HomePageController extends Controller
             'service_categories' => Service::where('status', true)->get(),
             'aboutdata' => About::first(),
             'features' => Feature::all(),
+            'testimonials' => Testimonial::where('status', 'active')->latest()->get(),
         ]);
     }
 }

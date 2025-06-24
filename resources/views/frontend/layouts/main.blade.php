@@ -74,7 +74,7 @@
   
 
   <div class="whatsup">
-    <a href="https://wa.me/{{ $settings->whatsapp_number }}?text={{ urlencode('Hello, I want to know more!') }}"
+    <a href="https://wa.me/{{ $settings->whatsapp_number }}?text={{ urlencode('Hello Tech Lab33 , I want to know more your services!') }}"
        target="_blank"
        class="btn btn-success d-flex align-items-center justify-content-center gap-2">
         <i class="bi bi-whatsapp" style="font-size: 1.5rem;"></i>
