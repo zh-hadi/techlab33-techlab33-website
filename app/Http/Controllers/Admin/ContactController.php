@@ -71,6 +71,9 @@ class ContactController extends Controller
      */
     public function show(Contact $contact)
     {
+        $contact->status = 'replied';
+        $contact->save();
+
         return view('backend.pages.contact.show', [
             'contact' => $contact,
         ]);

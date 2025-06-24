@@ -22,16 +22,16 @@
                 </thead>
                 <tbody>
                     @foreach($contacts as $key => $contact)
-                    <tr>
+                    <tr  style="{{ $contact->status == 'replied' ? '' : 'color: red;' }}">
                         <td>{{ $key + 1 }}</td>
                         <td>{{ $contact->name }}</td>
                         <td>{{ $contact->email }}</td>
                         <td>{{ $contact->subject }}</td>
                         <td>
-                            @if($contact->status === 'replied')
-                                <span class="badge badge-success">Replied</span>
+                            @if($contact->status == 'replied')
+                                <span class="badge badge-success">Seen</span>
                             @else
-                                <span class="badge badge-warning">Not replied</span>
+                                <span class="badge badge-warning">Not Seen</span>
                             @endif
                         </td>
                         <td>
