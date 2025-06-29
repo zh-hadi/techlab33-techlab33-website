@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('client');
             $table->string('publish_date')->nullable();
             $table->string('url')->nullable();
-            $table->foreignIdFor(ProjectCategory::class)->nullable();
+            $table->foreignIdFor(ProjectCategory::class)->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
 

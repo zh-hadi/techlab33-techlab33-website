@@ -43,8 +43,9 @@ class ProjectCategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, ProjectCategory $porject_category)
+    public function update(Request $request, $porject_category)
     {
+        $category = ProjectCategory::find($porject_category);
         $attributes = $request->validate([
             'name' => ['nullable', 'string'],
             'slug' => ['nullable', 'string'],
@@ -54,7 +55,7 @@ class ProjectCategoryController extends Controller
             $attributes['slug'] = Str::slug($attributes['name']);
         }
 
-        $porject_category->update($attributes);
+        $category->update($attributes);
 
         return redirect()->back()->with('success', 'Category update successfully!');
     }
@@ -62,9 +63,11 @@ class ProjectCategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(ProjectCategory $porject_category)
+    public function destroy($porject_category)
     {
-        $porject_category->delete();
+
+        $category = ProjectCategory::find($porject_category);
+        $category->delete();
 
         return redirect()->back()->with('success', 'Category deleted successfully!');
     }
